@@ -38,7 +38,7 @@ In order to get the best out of React. I will resume [this official guidelines](
  * Evens the rendering is not optimized to the best. The `render()` functions might be called more frequently than it should on the VirtualDOM.. But It is not the end of the world, because the `render()` functions are cheap (for the most part). The expensive updates on the real DOM happen only if there are real changes in the VirtualDOM. You might call `render()` a thousand times without triggering any update in the real DOM.
  * If you cannot use  [`PureRenderMixin`](https://facebook.github.io/react/docs/pure-render-mixin.html) with [`immutable-js`](https://facebook.github.io/immutable-js/) as in [the official guidelines](https://facebook.github.io/react/docs/advanced-performance.html):
    * Implement `toImmutable()` method to return Immutable versions of the data
-   * Use the [`ReactImmutableRenderMixin`](https://github.com/jurassix/react-immutable-render-mixin)
+   * Use the [`ReactImmutableRenderMixin`](https://github.com/jurassix/react-immutable-render-mixin). It compare state/props with `Immutable.is()` instead of the `===` strict reference.
  * `forceUpdate()` is not recommended to call, but it is not worse than `$digest()` and `$apply()` of **AngularJs** (and look how AngularJs works wonderfully)
 
 ### Conclusion
