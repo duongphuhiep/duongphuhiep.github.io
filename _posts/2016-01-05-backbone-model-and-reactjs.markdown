@@ -3,7 +3,6 @@ published: true
 title: Backbone Model and ReactJs
 layout: post
 tags: [reactjs, backbone]
-categories: [reactjs]
 ---
 I want to write opinions after reading some articles about using [Backbone Model](http://backbonejs.org/#Model) in [ReactJs](https://facebook.github.io/react/) applications.  
 
