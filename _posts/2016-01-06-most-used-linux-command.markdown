@@ -2,6 +2,8 @@
 published: true
 title: Most used Linux command
 layout: post
+tags: [linux, vim, nano]
+categories: [linux]
 ---
 Last modified last
 
