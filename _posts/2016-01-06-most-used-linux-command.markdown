@@ -4,7 +4,12 @@ title: Most used Linux command
 layout: post
 tags: [linux, vim, nano]
 ---
-Last modified last
+# Suspend
+
+    pm-suspend
+    pm-hibernate
+
+List order by last modified last
 
     ls -altr
 
