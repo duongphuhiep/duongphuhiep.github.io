@@ -4,6 +4,25 @@ title: Most used Linux command
 layout: post
 tags: [linux, vim, nano]
 ---
+# Limit Bandwidth, simulate slow network
+
+    $ sudo wondershaper {interface} {down} {up}
+
+the {down} and {up} are bandwidth in kilobits. So for example if you want to limit the bandwidth of interface eth1 to 256kbps uplink and 128kbps downlink,
+
+    $ sudo wondershaper eth1 256 128
+
+To clear the limit,
+
+    $ sudo wondershaper clear eth1
+
+http://jwalanta.blogspot.fr/2009/04/easy-bandwidth-shaping-in-linux.html
+
+list all interface: 
+    ifconfig
+    netstat -i
+    ip link show
+
 # Suspend
 
     pm-suspend
