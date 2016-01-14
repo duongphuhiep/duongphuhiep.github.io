@@ -19,6 +19,7 @@ To clear the limit,
 http://jwalanta.blogspot.fr/2009/04/easy-bandwidth-shaping-in-linux.html
 
 list all interface: 
+
     ifconfig
     netstat -i
     ip link show
