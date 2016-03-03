@@ -29,7 +29,13 @@ list all interface:
     pm-suspend
     pm-hibernate
 
-List order by last modified last
+# System Info
+
+    top
+    df -h
+    sudo lshw
+
+# List order by last modified last
 
     ls -altr
 
