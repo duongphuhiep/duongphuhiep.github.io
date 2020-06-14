@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>backbone on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/tags/backbone/</link>
+    <description>Recent content in backbone on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 05 Jan 2016 21:41:58 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/tags/backbone/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backbone Model and Reactjs</title>
+      <link>https://duongphuhiep.github.io/posts/backbone-model-and-reactjs/</link>
+      <pubDate>Tue, 05 Jan 2016 21:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/backbone-model-and-reactjs/</guid>
+      <description>I want to write opinions after reading some articles about using Backbone Model in ReactJs applications.
+Why people still use the old &amp;ldquo;Backbone Model&amp;rdquo;?  In most scenario, the application was backbones-based (from start) and peoples want to migrate only the &amp;ldquo;View&amp;rdquo; layer to ReactJs. Some peoples choose Backbone Model because they are more familiar with.  Is this &amp;ldquo;duo&amp;rdquo; good or bad? I didn&amp;rsquo;t see any article telling the advantages of Backbone Model on a ReactJs applications in term of Perf / Testability / Maintainability&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

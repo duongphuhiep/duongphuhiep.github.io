@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.72.0" />
+
+    
+    
+    
+
+<title>Unit Testing • Hiep&#39;s Blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unit Testing"/>
+<meta name="twitter:description" content="Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng điểm Sonar. Sau nhiều cố gắng, các &ldquo;Unit test&rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &ldquo;Unit test&rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)"/>
+
+<meta property="og:title" content="Unit Testing" />
+<meta property="og:description" content="Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng điểm Sonar. Sau nhiều cố gắng, các &ldquo;Unit test&rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &ldquo;Unit test&rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://duongphuhiep.github.io/posts/unit-testing-vn/" />
+<meta property="article:published_time" content="2018-04-11T00:35:33+02:00" />
+<meta property="article:modified_time" content="2018-04-11T00:35:33+02:00" /><meta property="og:site_name" content="Hiep&#39;s Blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.49ebc79ae418095a3030a59e74edf330320c88572a455c40ca25b9d8bb20596c.css" integrity="sha256-SevHmuQYCVowMKWedO3zMDIMiFcqRVxAyiW52LsgWWw=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://duongphuhiep.github.io">Hiep&#39;s Blog</a>
+      </span>
+      
+      
+        <div class="author-image">
+          <img src="https://www.gravatar.com/avatar/933d1f65e9081fa65feccef9b6a723be?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
+        </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Hiep&#39;s Blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/duongphuhiep" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/duongphuhiep" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/duongphuhiep" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/phu-hiep-duong-487b7428" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/347051/hiep" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="mailto:duongphuhiep@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+    
+    
+</section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Unit Testing</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 11, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/backend">BACKEND</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/test">TEST</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/c">c#</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/java">java</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/xunit">xunit</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/test">test</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 12 min read
+</div>
+
+
+  </header>
+  
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  
+  <div class="post">
+    <p>Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng <a href="https://docs.sonarqube.org/latest/user-guide/metric-definitions/">điểm Sonar</a>. Sau nhiều cố gắng, các &ldquo;Unit test&rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &ldquo;Unit test&rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)</p>
+<p>Lúc đó tôi không biết rằng nhiệm vụ mà sếp giao cho tôi vốn không thỏa đáng, và những Unit tests tôi viết ra không thực sự là Unit tests. Cho tới hôm nay, tôi nhận thấy vẫn có rất nhiều sếp CTO hay lập trình viên dày dạn kinh nghiệm hiểu sai về Unit Test. Họ vẫn cho rằng viết Unit test hay viết test nói chung là 1 công việc phụ dễ dàng cho người mới vào nghề (junior), là việc kém quan trọng nhất, thường để &ldquo;lót nồi&rdquo; viết cuối cùng khi đã code xong xuôi và còn dư thời gian..</p>
+<p>Bài viết này trình bày 1 vài kinh nghiệm của tôi về Unit test / hay test ứng dụng nói chung, lấy C# làm ví dụ điển hình, nhưng những thông tin tôi muốn truyền tải có thể ứng dụng cho bất kỳ ngôn ngữ lập trình nào, bạn có thể tùy ý thay thế chữ C# trong bài viết thành các ngôn ngữ tương tự như Java, Ruby, Python&hellip;</p>
+<p>Hiểu một cách mộc mạc thì..</p>
+<h2 id="một-unit-test--test-cho-1-hàm-method-cụ-thể-của-1-class-c-nào-đó">Một Unit test = test cho 1 hàm (method) cụ thể của 1 class C# nào đó</h2>
+<p><strong>Mỗi khi viết 1 hàm (method) mới cho 1 class, ta cần phải nghĩ cách để viết test cho hàm đó</strong>. Một số coder thậm chí còn tuân theo quy trình TDD, quy trình này quy định họ phải viết test cho hàm mới trước khi bắt tay vào viết code cho hàm đó..</p>
+<p>1 Unit-test không được là 1 kịch bản test phức tạp. Chúng cần phải chạy mà không yêu cầu phải có CSDL hay có kết nối với các dịch vụ bên ngoài.</p>
+<ul>
+<li>Nếu Test của bạn muốn chạy được cần phải có kết nối với CSDL hay cần có kết nối mạng để gọi các dịch vụ bên ngoài thì đó không phải là <strong>Unit test</strong>, mà đó gọi là <strong>integration test</strong> (bạn đang test kết nối với CSDL và test cả kết nối với dịch vụ bên ngoài).</li>
+<li>Có rất nhiều framework hay thư viện giúp chạy Unit test như <a href="https://xunit.net/">xUnit</a>, <a href="https://nunit.org/">nUnit</a>.. nhưng chúng thường xuyên bị lạm dụng để chạy các integration test hay các kịch bản test phức tạp&hellip; trong khi người dùng vẫn hiểu nhầm là họ đang chạy Unit tests..</li>
+</ul>
+<h2 id="ai-sẽ-là-người-viết-unit-test-cho-hàm-này">Ai sẽ là người viết Unit test cho hàm này?</h2>
+<p>Tất nhiên tác giả viết ra hàm đó cũng phải chịu trách nhiệm viết Unit test cho nó. Khi Bạn thay đổi (refactor) một hàm, bạn cũng sẽ phải thay đổi (refactor) tất cả các Unit test liên quan&hellip;</p>
+<h2 id="không-thể-viết-được-unit-test-cho-hàm-này">Không thể viết được Unit test cho hàm này!</h2>
+<p>&ldquo;Tôi tạo ra 1 hàm mới và nghĩ cách viết Unit test cho nó.. nhưng chịu thua, hàm của tôi phụ thuộc vào CSDL, và gọi dịch vụ bên ngoài, vậy nên không Unit test nào có thể test nổi nó&rdquo;.</p>
+<p>Ví dụ: Giả sử một hàm <code>Rabbit.Jump()</code> gọi dịch vụ ngoài để lấy dữ liệu về, thay đổi nó 1 chút với <strong>1 tính toán nhỏ</strong> (chỉ trong 1 dòng code thôi). Cuối dùng dữ liệu tính ra được sẽ được lưu vào CSDL. Phần lớn code trong hàm dùng cho việc xuất/nhập (gọi dịch vụ bên ngoài, đọc ghi CSDL..) làm thế nào viết được unit test cho nó đây?</p>
+<pre><code>class Rabbit {
+  void Jump() {
+    Gọi dịch vụ bên ngoài // code Xuất/Nhập - không-unit-test-được
+    tính toán nhỏ // unit-test-được (1 dòng code)
+    Lưu vào CSDL // code Xuất/Nhập - không-unit-test-được
+  }
+}
+</code></pre><p>Trong trường hợp này đúng là Unit test không thể phủ được 100% hàm, nhưng khi viết Unit test bạn thực sự định test cái gì trong hàm này?</p>
+<p>Mục đích Unit test không phải để test các dịch vụ bên ngoài hay test kết nối tới CSDL, mà để test tất cả những gì còn lại.. Trong trường hợp này, bạn sẽ phải viết Unit test để phủ test cho cái <strong>tính toán nhỏ</strong> (1 dòng code) kia.</p>
+<p>Đó không phải là nhiệm vụ dễ dàng, dòng code cần test nằm giữa các đoạn codes Xuất/Nhập. Để test được nó, bạn cần phải cải tổ (refactor) lại codes, để tách các đoạn <strong>codes unit-test-được</strong> ra khỏi các đoạn codes Xuất/Nhập <strong>không-unit-test-được</strong>. Một kỹ thuật thông thường là phân tách các đoạn codes Xuất/Nhập ra các class riêng, rồi gọi chúng thông qua các interface hay các abstract class, để sau đó, ta có thể giả lập (mock) được các đoạn codes này khi chạy unit test. (Công việc này đòi hỏi lập trình viên cần phải có kinh nghiệm, có lẽ tôi sẽ trình bày trong một bài viết khác.)</p>
+<p>Vậy nếu có anh CTO nào đó yêu cầu một junior mới vào nghề phải &ldquo;viết thêm unit test&rdquo; cho đám codes cũ mà lúc được viết tác giả hoàn toàn không nghĩ gì tới Unit test&hellip; thì đây là 1 yêu cầu không thỏa đáng&hellip;</p>
+<h2 id="có-đáng-phải-bỏ-công-sức-ra-để-viết-unit-tests-không">Có đáng phải bỏ công sức ra để viết Unit tests không?</h2>
+<p>Để có thể test được cái tính toán nhỏ (1 dòng code) kia, bạn phải hì hục ngồi cải tổ (refactor) lại cả đám codes.. Đó là chuyện bình thường, để có thể viết ra được unit test bạn sẽ phải cải tổ lại codes, làm giả lập (mock) khá nhiều. Mã Codes để test 1 hàm thường dài hơn (có khi rất nhiều) so với codes của chính cái hàm đó. Sau đó bạn sẽ phải bảo trì (maintain) cho cả codes chính lẫn đám codes test.. =&gt; Tôi tin rằng <strong>viết codes kèm Unit-tests đòi hỏi nỗ lực gấp 3 (thậm chí 4 lần) nỗ lực viết code thông thường (viết code không nghĩ tới Unit test)</strong>.</p>
+<p>Vậy liệu có đáng để viết Unit test không? - tôi nghĩ là &ldquo;CÓ&rdquo; trong phần lớn các ca..</p>
+<p>Khi bạn viết codes theo cách tự nhiên (tức là hoàn toàn không nghĩ tới Unit test): các lập trình viên non nớt thường thảy tất cả mọi thứ gộp chung vào 1 <strong>hàm to</strong> (thường dài và phức tạp) để hàm đó làm tất cả.. Họ ngại (sợ hoặc lười) phân tách codes ra thành các hàm nhỏ, ngại tạo ra các file mới / class mới / hay hàm mới.. bởi họ chưa có thói quen đó, không biết khi nào nên tách hay nên chập codes&hellip;</p>
+<p>Trong cái <strong>hàm to</strong> kia, họ không ngại gì gọi các hàm static trong các module khác, điều đó thật tự nhiên và thuận tiện.. Vậy cứ <a href="https://codeburst.io/static-classes-are-evil-or-make-your-dependencies-explicit-af3e73bd29dd">viết tất cả mọi thứ static hết là ngon</a>&hellip; :)) Cuối cùng cái <strong>hàm to</strong> đó cũng hoàn thành nhiệm vụ của mình và chạy được ngon lành trong ứng dụng&hellip;</p>
+<p>Bây giờ, nếu bạn yêu cầu tác giả viết unit test cho cái <strong>hàm to</strong> kia&hellip; thì thôi xong! Đám codes trong đó không được viết để chạy trong <strong>bối cảnh &ldquo;thiếu thốn&rdquo; của Unit test</strong>. Đám codes đó chỉ chạy trong bối cảnh khi cả ứng dụng được chạy, có đầy đủ kết nối CSDL, và kết nối các dịch vụ bên ngoài, mọi thứ được cấu hình đầy đủ.. Vậy mỗi lần có thay đổi gì đó trong cái <strong>hàm to</strong> kia, bạn sẽ phải khởi động lại cả ứng dụng, đợi cho 1 sự kiện gì đó xảy ra trong ứng dụng để đoạn codes thay đổi được chạy, rồi bạn mới test được nó. Nhỡ nó chạy không chuẩn bạn sẽ phải làm đi làm lại như vậy&hellip;</p>
+<p>Để có thể viết Unit test được cho <strong>hàm to</strong> kia, bạn phải cải tổ lại nó, thậm chí cải tổ lại toàn bộ codes cả ứng dụng để phân tách ra được những phần <strong>codes unit-test-được</strong> ra khỏi những phần codes <strong>không-unit-test-được</strong>. Nếu bạn đủ gan để làm vậy codes của ứng dụng sẽ trở nên quy củ và logic hơn nhiều.. Toàn bộ codes làm nhiệm vụ Xuất/Nhập sẽ có thể được giả lập và thay thế, ứng dụng sẽ trở nên linh hoạt hơn do ít bị phụ thuộc vào CSDL hay các ứng dụng bên ngoài.</p>
+<p><strong>Vậy giá trị của Unit testing không hẳn chỉ là để đạt điểm Sonar cao hơn nhưng chủ yếu để tăng chất lượng kiến trúc và chất lượng codes của ứng dụng.</strong></p>
+<p>Liếc sơ qua codes của một ứng dụng, bạn có thể nói ngay được tác giả có nghĩ tới Unit-test không khi viết ra đám codes đó. Nếu nghĩ tới Unit test, bạn sẽ thấy trong code có nhiều interface, abstract class giành cho các codes Xuất/Nhập. Nếu tác giả không nghĩ tới Unit test khi viết code, bạn sẽ thấy các đám code Xuất/Nhập trộn dính cứng với codes tính toán, và static được sử dụng ở khắp nơi..</p>
+<h2 id="chỉ-với-unit-tests-không-thể-bao-phủ-được-100-codes-của-ứng-dụng">Chỉ với Unit tests không thể bao phủ được 100% codes của ứng dụng</h2>
+<p>Bạn tốn bao công sức cải tổ codes trong ứng dụng để có thể viết được thêm nhiều unit test hơn.. nhưng tùy thuộc vào thể loại ứng dụng, các Unit tests bạn viết ra có lẽ chỉ phủ được 30% codes của ứng dụng (con số ví dụ)</p>
+<p>=&gt; Đừng thất vọng! Unit test chỉ phủ những phần tính toán cốt lõi nhất của ứng dụng, 70% đám codes còn lại có lẽ là để thực thi Xuất/Nhập (đọc viết database, gọi dịch vụ bên ngoài&hellip;) bởi vì nhiệm vụ ứng dụng của bạn chủ yếu là để thực thi Xuất/Nhập, các tính toán cốt lõi chỉ chiếm phần nhỏ, nên Unit tests chỉ có thể phủ được ngần đó thôi.</p>
+<p>Ví dụ nếu bạn làm 1 ứng dụng &ldquo;mạng điều hướng&rdquo;, trong đó nhiệm vụ ứng dụng là để nghe nhận các request, điều hướng chúng cho 1 dịch vụ thích hợp bên ngoài, nhận và trả lại kết quả.. Unit test có khi chỉ phủ được 5, 10% codes cho thể loại ứng dụng này: nó chỉ phủ được phần tính toán điều hướng là cùng&hellip;</p>
+<p>Ngược lại, nếu Xuất/Nhập chỉ là 1 phần nhỏ của ứng dụng, phần lớn codes ứng dụng dùng để tính toán, nghiệp vụ ( if/ for/ while..) bạn sẽ phải viết được nhiều Unit tests để phủ được phần lớn codes trong ứng dụng. Nếu bạn không viết được =&gt; đó là dấu hiệu cho thấy kiến trúc ứng dụng và tổ chức codes của bạn đang yếu kém, các đoạn codes tính toán nghiệp vụ trộn lẫn với codes Xuất/Nhập ngăn cản bạn viết Unit test cho chúng.</p>
+<h2 id="làm-thế-nào-để-tests-bao-phủ-được-100-codes">Làm thế nào để tests bao phủ được 100% codes</h2>
+<p>Tiếp tục ví dụ trên, các Unit test của bạn đã phủ được 30% những phần cốt lõi nhất trong ứng dụng, 70% còn lại là codes Xuất/Nhập. Để phủ được đám codes này, cách duy nhất là chạy <strong>Integration tests</strong>: Lúc này, bạn cần có CSDL, kết nối được với các dịch vụ bên ngoài hoặc kết nối được với môi trường test hay môi trường giả lập của các dịch vụ đó. Bạn và các nhóm liên quan phải bảo trì toàn bộ hệ sinh thái này, và đó thông thường không phải là điều dễ dàng (khó khăn hơn nhiều so với việc duy trì Unit tests).</p>
+<p>Ngày nay các nhà phát triển thường sử dụng <a href="https://www.docker.com/">Docker</a>, nó giúp ta tự động tạo ra môi trường thuận lợi cho các Integration Tests mỗi khi chúng được chạy.</p>
+<p>Các <strong>integration tests</strong> thường phủ được phần lớn codes ứng dụng bao gồm tất cả các phần codes mà Unit tests đã phủ được. Vì vậy nhiều nhà phát triển thường bỏ qua việc viết <strong>Unit tests</strong> mà nhảy vào viết trực tiếp <strong>Integration tests</strong> luôn.. Nực cười ở chỗ: tuy họ đang viết Integration tests để chạy trong Docker nhưng họ vẫn lầm tưởng rằng mình đang viết Unit tests&hellip;</p>
+<p>Nếu Integration tests có thể phủ được 100% ứng dụng rồi, vậy liệu có còn đáng đầu tư công sức vào Unit tests nữa không? Câu trả lời của tôi vẫn là &ldquo;Có&rdquo;, theo tôi Unit test vẫn sẽ giúp cải thiện đáng kể chất lượng codes và kiến trúc ứng dụng.. Hơn nữa đừng coi thường con số 30% codes mà Unit tests đang bao phủ.. đó là đám codes cốt lõi nhất trong ứng dụng, và có nghĩa là bạn có thể test được chúng, test được 1/3 ứng dụng nhanh gọn bất kỳ lúc nào mà không cần kết nối với CSDL hay bất kỳ dịch vụ nào bên ngoài hệ thống&hellip; và đó là giá trị tuyệt vời của Unit test&hellip;</p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Viết test là công việc khó khăn, có lẽ còn khó hơn cả việc viết codes chính. Bảo trì cho tests cũng không dễ dàng, bảo trì cho môi trường chạy Tests integration lại càng không dễ dàng và thường đòi hỏi nhiều can thiệp thủ công cầu kỳ&hellip; Đừng coi nhẹ hay xem thường những nhiệm vụ này và đẩy chúng cho các lập trình viên mới vào nghề..</p>
+<p>Người viết codes cũng phải là người viết test và vạch ra chiến thuật, phương thức dễ làm và thuận tiện nhất có thể để test được đám codes do mình viết ra. Đừng viết codes 1 cách cẩu thả cho xong việc, rồi thảy mớ codes của mình cho người khác tests&hellip; trong khi ngay chính bản thân mình cũng gặp đầy khó khăn nếu muốn test chúng.</p>
+<p>Thực ra , khi bạn viết codes, chỉ cần bạn nghĩ tới vấn đề làm thể nào để viết được Unit tests cho đám codes đang viết, làm thế nào để chạy được đám codes đó trong hoàn cảnh &ldquo;nghèo nàn&rdquo; của Unit test (không có CSDL, không có kết nối với bên ngoài), tự nhiên bạn sẽ phải tìm cách viết hay cách tổ chức khác hay tìm cách cải tổ lại codes.. và một cách tự nhiên chất lượng codes sẽ được đẩy lên cao.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/yellow-style-modeling/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Yellow Style Modeling - Let&#39;s describe the World in some 2D tables</span>
+    </a>
+    
+    
+    <a href="/posts/unit-testing-en/" class="navigation-next">
+      <span class="navigation-tittle">Unit Testing</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

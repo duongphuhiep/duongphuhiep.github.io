@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/backend/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/c#/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/csharp-java-programming-some-best-practices/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/</loc>
+    <lastmod>2020-04-25T14:21:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/authentication/</loc>
+    <lastmod>2019-11-30T14:54:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/authentication-demystify/</loc>
+    <lastmod>2019-11-30T14:54:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/jwt/</loc>
+    <lastmod>2019-11-30T14:54:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/oauth2/</loc>
+    <lastmod>2019-11-30T14:54:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/openid/</loc>
+    <lastmod>2019-11-30T14:54:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/security/</loc>
+    <lastmod>2019-11-30T14:54:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/about/</loc>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/java/</loc>
+    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/test/</loc>
+    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/test/</loc>
+    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/unit-testing-en/</loc>
+    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/xunit/</loc>
+    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/portfolio/dera/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/portfolio/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/unit-testing-vn/</loc>
+    <lastmod>2018-04-11T00:35:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/database/</loc>
+    <lastmod>2018-03-31T17:13:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/modeling/</loc>
+    <lastmod>2018-03-31T17:13:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/rdbms/</loc>
+    <lastmod>2018-03-31T17:13:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/sql/</loc>
+    <lastmod>2018-03-31T17:13:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/uml/</loc>
+    <lastmod>2018-03-31T17:13:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/yellow-style-modeling/</loc>
+    <lastmod>2018-03-31T17:13:26+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/portfolio/hyde-hyde/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/portfolio/laramod/</loc>
+    <lastmod>2018-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/devops/</loc>
+    <lastmod>2017-03-12T16:30:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/git/</loc>
+    <lastmod>2017-03-12T16:30:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/git-merge-conflicts/</loc>
+    <lastmod>2017-03-12T16:30:48+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/git-revision-number/</loc>
+    <lastmod>2017-03-12T12:32:04+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/backbone/</loc>
+    <lastmod>2016-01-05T21:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/backbone-model-and-reactjs/</loc>
+    <lastmod>2016-01-05T21:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/frontend/</loc>
+    <lastmod>2016-01-05T21:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/reactjs/</loc>
+    <lastmod>2016-01-05T21:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/linux/</loc>
+    <lastmod>2015-12-01T10:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/most-used-linux-command/</loc>
+    <lastmod>2015-12-01T10:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/nano/</loc>
+    <lastmod>2015-12-01T10:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/vim/</loc>
+    <lastmod>2015-12-01T10:41:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/excel/</loc>
+    <lastmod>2015-10-02T23:50:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/macro/</loc>
+    <lastmod>2015-10-02T23:50:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/office/</loc>
+    <lastmod>2015-10-02T23:50:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/vba/</loc>
+    <lastmod>2015-10-02T23:50:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/visual-basic/</loc>
+    <lastmod>2015-10-02T23:50:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/visual-basic-lesson/</loc>
+    <lastmod>2015-10-02T23:50:49+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/.net/</loc>
+    <lastmod>2003-06-16T21:23:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/choose-for-the-future/</loc>
+    <lastmod>2003-06-16T21:23:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/categories/memory/</loc>
+    <lastmod>2003-06-16T21:23:27+07:00</lastmod>
+  </url>
+  
+</urlset>

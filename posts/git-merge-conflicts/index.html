@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.72.0" />
+
+    
+    
+    
+
+<title>Git Merge Conflicts • Hiep&#39;s Blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Merge Conflicts"/>
+<meta name="twitter:description" content="I used Github for years. Most of my personals projects are on Github. However I&rsquo;m only an amateur Git user who only knowledgeable enough to work with one-person projects. I suppose that many Github&rsquo;s users (or evens a majority of them) are like me.
+Now, I need to use Git in a team. Things become complicated: branches to merge, conflicts pop up, cryptic error messages or strange situations&hellip; I tried many GUI tools with hope that it will make Git more friendly."/>
+
+<meta property="og:title" content="Git Merge Conflicts" />
+<meta property="og:description" content="I used Github for years. Most of my personals projects are on Github. However I&rsquo;m only an amateur Git user who only knowledgeable enough to work with one-person projects. I suppose that many Github&rsquo;s users (or evens a majority of them) are like me.
+Now, I need to use Git in a team. Things become complicated: branches to merge, conflicts pop up, cryptic error messages or strange situations&hellip; I tried many GUI tools with hope that it will make Git more friendly." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://duongphuhiep.github.io/posts/git-merge-conflicts/" />
+<meta property="article:published_time" content="2017-03-12T16:30:48+02:00" />
+<meta property="article:modified_time" content="2017-03-12T16:30:48+02:00" /><meta property="og:site_name" content="Hiep&#39;s Blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.49ebc79ae418095a3030a59e74edf330320c88572a455c40ca25b9d8bb20596c.css" integrity="sha256-SevHmuQYCVowMKWedO3zMDIMiFcqRVxAyiW52LsgWWw=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://duongphuhiep.github.io">Hiep&#39;s Blog</a>
+      </span>
+      
+      
+        <div class="author-image">
+          <img src="https://www.gravatar.com/avatar/933d1f65e9081fa65feccef9b6a723be?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
+        </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Hiep&#39;s Blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/duongphuhiep" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/duongphuhiep" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/duongphuhiep" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/phu-hiep-duong-487b7428" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/347051/hiep" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="mailto:duongphuhiep@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+    
+    
+</section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Git Merge Conflicts</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Mar 12, 2017
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/devops">DEVOPS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/git">git</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 9 min read
+</div>
+
+
+  </header>
+  
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  
+  <div class="post">
+    <p>I used Github for years. Most of my personals projects are on Github. However I&rsquo;m only an amateur Git user who only knowledgeable enough to work with one-person projects. I suppose that many Github&rsquo;s users (or evens a majority of them) are like me.</p>
+<p>Now, I need to use Git in a team. Things become complicated: branches to merge, conflicts pop up, cryptic error messages or strange situations&hellip; I tried many GUI tools with hope that it will make Git more friendly. In the end, I realized that there is no help. I have to learn and to practice Git seriously. There is many good Git GUI Tools out there, but if you don&rsquo;t understand Git, you don&rsquo;t understand them either (especially in case of problem).</p>
+<p>I don&rsquo;t want to learn about the internals of Git. I only need to be proficient enough to work on a team. So I need to hone my skills to manage branches, merge branches and resolve conflicts.</p>
+<p>After a few days playing around with git, experiment all sort of branching merging, rebasing, resolve conflicts. I think that I got a hold of it and.. I like it (stockholm syndrome?).</p>
+<p>This article is not a tutorial, there is already many tutorials out there. The main purpose is to show you how to practices and learn Git yourself.</p>
+<h2 id="how-to-play-with-git">How to play with Git</h2>
+<ul>
+<li>Create a new folder <code>git-playground</code></li>
+<li>In this folder, we will simulate a team of 2 persons: &ldquo;<strong>Bob</strong>&rdquo; and &ldquo;<strong>Dave</strong>&rdquo; working on a project called &ldquo;demonic&rdquo; on a shared repository <code>host</code>.</li>
+<li><strong>Everything is on your PC local.</strong> (no need Github or internet connection)</li>
+</ul>
+<pre><code>git-playground
+|
++- host
+</code></pre><p>Create a shared repository in the <code>host</code> folder</p>
+<pre><code>cd host
+git init --bare --shared demonic.git
+</code></pre><p><strong>Bob</strong> will make a clone of this repo to the <code>bob</code> folder</p>
+<pre><code>cd git-playground
+git clone host/demonic.git bob
+</code></pre><p><strong>Dave</strong> will also make a clone of the shared repository to the <code>dave</code> folder</p>
+<pre><code>git clone host/demonic.git dave
+</code></pre><p>Now, your <code>git-playground</code> resembles:</p>
+<pre><code>git-playground
+|
++- host
+|  |
+|  +- demonic.git
+|
++- bob
+|
++- dave
+</code></pre><p>Next you will open 2 terminals, one cds to <code>bob</code> to simulate <strong>Bob</strong>&rsquo;s actions, other cds to <code>dave</code> to simulate <strong>Dave</strong>&rsquo;s actions. For example:</p>
+<p><strong>Bob</strong> creates a file <code>main.js</code> and push it to the shared repository:</p>
+<pre><code>cd git-playground/bob
+vim main.js
+...
+git add main.js
+git commit -m &quot;bob start working on repository&quot;
+git push
+</code></pre><p>On other terminal, <strong>Dave</strong> pull the <code>main.js</code></p>
+<pre><code>cd git-playground/dave
+git pull
+</code></pre><p>All the setup is done. You are ready to play!</p>
+<h2 id="prepare-the-gui-tools">Prepare the GUI tools</h2>
+<p>I mostly use command lines, but I prefer GUI tools for everything related to visualization such as</p>
+<ul>
+<li>display branches / history: <code>gitk</code></li>
+<li>diff, merge: <a href="http://meldmerge.org/"><code>meld</code></a></li>
+</ul>
+<p><code>gitk</code> is bundled with the Git installation by default. I constantly call <code>gitk --all</code> to visualize the graph.</p>
+<p>The only tool I have to install in addition is <a href="http://meldmerge.org/"><code>meld</code></a>. My <a href="https://gist.github.com/duongphuhiep/0801616d8c87bb71c535e8fbcd71e263"><code>.gitconfig</code></a> uses <code>meld</code> as the default &ldquo;difftool&rdquo; and &ldquo;mergetool&rdquo;</p>
+<p><strong>I discovered that <code>meld</code> can smartly do the merge for me: menu &ldquo;Changes &gt; Merge All&rdquo;</strong></p>
+<p>You might also find more useful resources <a href="https://github.com/duongphuhiep/duongphuhiep.github.io/wiki/Git">here</a></p>
+<h2 id="play-a-classic-merge">Play a classic merge</h2>
+<ul>
+<li>
+<p><strong>Bob</strong> and <strong>Dave</strong> both commit some changes to <code>main.js</code></p>
+</li>
+<li>
+<p><strong>Bob</strong> does a <code>git push</code> first</p>
+</li>
+<li>
+<p><strong>Dave</strong> makes a <code>git fetch</code><br>
+=&gt; <code>gitk --all</code> will show you that the branch <code>master</code> is not the same as <code>origin/master</code></p>
+</li>
+<li>
+<p><strong>Dave</strong> is on his branch <code>master</code>, and he will have to merge to the branch <code>origin/master</code>:</p>
+</li>
+</ul>
+<pre><code>git merge origin/master
+</code></pre><p>If there are conflicts, he will enter the process of solving the conflicts.</p>
+<ul>
+<li>he can see the conflicts status at anytime <code>git status</code></li>
+<li>he can quit the process at anytime: <code>git merge --abort</code></li>
+<li>he can solve the conflict with help of <code>meld</code>: <code>git mergetool</code></li>
+</ul>
+<h2 id="play-with-rebase">Play with Rebase</h2>
+<p>Git provides 2 methods to merge branches: The classic merge, and the &ldquo;rebase&rdquo;. Beginner often have trouble with the &ldquo;rebase&rdquo;.</p>
+<p>Read <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">this chapter</a> first. You must to &ldquo;eat&rdquo; at least the first half.</p>
+<p>And again, the best way to understand it is to play with it:</p>
+<ul>
+<li>Make <strong>Bob</strong> push 1 commit to <code>origin/master</code></li>
+<li>Make <strong>Dave</strong> commits 2 times on his <code>master</code></li>
+</ul>
+<p>After <strong>Dave</strong> run <code>git fetch</code>, he will see 2 branches (with <code>gitk --all</code>):</p>
+<ul>
+<li>the <code>master</code> with his two commits</li>
+<li>the <code>origin/master</code> with the commit of <strong>Bob</strong></li>
+</ul>
+<p>he will rebase his 2 commits on top of the <code>origin/master</code></p>
+<pre><code>git rebase
+</code></pre><p>After this command, he will enter the Rebase process. Each of his two commits will be &ldquo;replayed&rdquo; on <code>origin/master</code>. It is as if <strong>Dave</strong> is merging each commit to <code>origin/master</code> one by one, and each one might got conflicts:</p>
+<ul>
+<li><strong>Dave</strong> can see the conflicts status at anytime <code>git status</code></li>
+<li>each time he finshed to solve a conflict commit, he will continue to solve the next one <code>git rebase --continue</code></li>
+<li>he can quit the process at anytime: <code>git rebase --abort</code></li>
+<li>he can solve the conflicts with help of <code>meld</code>: <code>git mergetool</code></li>
+</ul>
+<h2 id="long-live-branch">Long-live branch</h2>
+<ul>
+<li><strong>Dave</strong> creates a branch <code>topic001</code> and implements a big feature on it with many changes on <code>main.js</code></li>
+<li>It is a long live branch, that <strong>Dave</strong> won&rsquo;t merge it back to <code>master</code> anytime soon.</li>
+<li>On the other side, <strong>Bob</strong> is working actively on the master branch, and push very oftens.</li>
+<li>In order to maintain the long-live <code>topic001</code> branch, so that it is not diverged too far from the <code>master</code>, <strong>Dave</strong> often merges <code>origin/master</code> to his <code>topic001</code> branch, and solves all the small conflicts on the way.</li>
+</ul>
+<p><strong>Dave</strong> notices that he often have to solve the same conflicts over and over again each time he do the <strong>maintenance work</strong> (merge <code>origin/master</code> to <code>topic001</code>).</p>
+<p>Why is Git so stupid?</p>
+<p>In fact Git is only smart to detect conflict situation, but let all the doubt of resolving conflicts to you and your external tools (eg. <code>meld</code>, <code>p4merge</code>, <code>kdiff3</code>, <code>tortoise-merge</code>..).</p>
+<p>Here come the rescues:</p>
+<ul>
+<li>
+<ol>
+<li>activate the <a href="https://git-scm.com/book/en/v2/Git-Tools-Rerere"><code>rerere</code> option</a></li>
+</ol>
+<pre><code>git config --global rerere.enabled 1
+</code></pre><p>Git will memorize how did you solve the conflicts, and automatically apply it the next time it see the same conflict   again. You teach git how to solve the conflict so Git won&rsquo;t bother you next time.</p>
+</li>
+<li>
+<ol start="2">
+<li>A good 3-ways merge tool is absolutely necessary: eg. <code>meld</code> menu &ldquo;Changes &gt; Merge All&rdquo;. and other tools below..</li>
+</ol>
+</li>
+</ul>
+<p>Lesson to learn: Git won&rsquo;t try to be smart and won&rsquo;t automaticly merge things for you if there is doubt of conflict.</p>
+<p>It could happen that git detected a conflict, but when you open it with your external merge tool (eg. <code>meld</code>, <code>p4merge</code>..), your tool is smart enough to resolve common conflicts and automaticly merge the 2 files with no trouble. You can say that Git is stupid when it comes to auto-merging, it won&rsquo;t take evens a slightest risk. So a good merge tool is especially important to complement Git.</p>
+<h3 id="other-tools">Other tools</h3>
+<p>They seem interesting, but I didn&rsquo;t try yet:</p>
+<ul>
+<li>
+<p><a href="https://www.semanticmerge.com/">Semantic Merge</a> - this paid tool claims to understand C#, Java.. See the <a href="https://www.semanticmerge.com/images/illustration-what.png">screenshoot</a>, it seems that the tool knows how to handle &ldquo;moving&rdquo; code blocks (a very hard problem for auto-merging)</p>
+</li>
+<li>
+<p><a href="http://www.syntevo.com/deepgit/tour">Deep Git Blame</a> - free tool to trace back origin of the codes. While solving conflicts, we often ask where did this code came from (and cause the conflict now)?</p>
+</li>
+</ul>
+<h2 id="how-to-reduce-conflicts">How to reduce conflicts</h2>
+<p>I hears peoples claim that <a href="http://stackoverflow.com/a/13448924/347051">git-flow</a> or a good use of <a href="https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/">Rebase instead of Merge</a> will reduce the conflicts poping up.</p>
+<p>IMHO, they are only illusions. If 3 persons change the same codes, you will have to solve conflicts 2 times whatever VCS or flow you are adopting.</p>
+<p>The only way to minimize conflicts is to change your project architecture and organize your codes so that everything is isolate as much as possible; to minimize the chance that 2 differents developments step on each other. But in case they both need to touch the same common codes, then conflicts are unavoidables.</p>
+<p>A good flow won&rsquo;t really help you to minimize conflicts. But I think that</p>
+<ul>
+<li>it might facilitates the conflicts resolving task.</li>
+<li>it might help to better distribute this task among team members (it won&rsquo;t neccessary be you who will have to solve conflicts all the time)</li>
+</ul>
+<p>It is very subjective. But, the general rule is:</p>
+<p>If you regulary merge 2 branches so that they won&rsquo;t diverge too far from each other, then you will need to solve only &ldquo;small&rdquo; conflicts. I called it the <strong>maintenance work</strong> (ref. the <a href="#long-live-branch-4">Long live branch</a> section).</p>
+<p>Voilà, it is the only way to deal with conflicts. Don&rsquo;t expect any silver bullet on this matter.</p>
+<h2 id="how-to-rewrite-history">How to rewrite history</h2>
+<p>Unlike <a href="https://www.mercurial-scm.org/">Mecurial</a>, it is easy to change history in a Git repository. Even though I&rsquo;m not a fan of changing the history. I don&rsquo;t care if my history is a mess of branches.</p>
+<p>It might important to maintain an optimized history for big open-source projects so that every commits appear to be carefully planned and the repository size won&rsquo;t blow up.</p>
+<p>But IMO, for most common projects, history is sacred. In addition, we shouldn&rsquo;t waste time to craft out a beautiful history but rather concentrate to the codes.  In this regard, I got the same opinion with Mecurial.</p>
+<p>However, there is time that I really need to change a past commit:</p>
+<p><strong>Bob</strong> did a stupid thing, he committed the database password, it was 2 commits before (HEAD~2) so that he cannot just <code>amend</code> it.</p>
+<p>To fix this situation, <strong>Bob</strong> will</p>
+<ul>
+<li>go to the stupid commit: <code>git reset --hard HEAD~2</code>,</li>
+<li>remove the password and <code>amend</code> the change to a new commit. It means that the new commit will be the same as the old one except that there is no password there.</li>
+<li>then rebase others commits to the new one.</li>
+</ul>
+<p><strong>Lesson to learn</strong>: you can move around commits (= go to the past)  with (<code>git checkout</code> or <code>git reset</code>, then make commit to rewrite history. In fact you are creating other branch of universe. About the old commits, if there is no tags, no branches reference to them, these commits will be garbage collected after 30 days.</p>
+<p>Read also: <a href="https://git-scm.com/blog">Reset Demystified</a> <em>Honestly speaking, I didn&rsquo;t read it :)). But I got the &lsquo;feel&rsquo; of &lsquo;git reset&rsquo; by practicing</em>.</p>
+<h2 id="cherry-pick">cherry-pick</h2>
+<p>It will also come in handy: You can pick some commit to replay, and ignore others.</p>
+<p>Sometime, I did some small commits on a &ldquo;unstable&rdquo; branch. Later I can cherry-pick some of these commits to merge to the &ldquo;stable&rdquo; branche, so that I can release them earlier on production without waiting for the unstable branch.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As a professional coder, I tried to get confortable with at least one Centralize CVS (eg. SVN, TFS..) and one Distributed CVS (eg. Git, Mecurial..).</p>
+<p>On the Distributed side, I choose Git which is a little more difficult (more verbose) than other alternatives (eg. Mecurial). But, whatever you chose, you&rsquo;ll need to learn it and practice it in order to benefice its power. However</p>
+<ul>
+<li>
+<p>Git is so popular that you can always find the solution for all sort of problems (forget about the man pages! <a href="https://git-scm.com/book/en/v2">git book</a> and <a href="http://stackoverflow.com/questions/tagged/git">stackoverflow</a> are your friend). All the questions I wanted to ask, someone usually asked already, and I usually got the responses straight to the point.</p>
+</li>
+<li>
+<p>Just play with Git a lot, explore its power. No book is better than practicing yourself. Once you got a hold on it, I doubt that you will look back to something else.</p>
+</li>
+</ul>
+<p>Enjoy the game!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/git-revision-number/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Git Revision Number</span>
+    </a>
+    
+    
+    <a href="/posts/yellow-style-modeling/" class="navigation-next">
+      <span class="navigation-tittle">Yellow Style Modeling - Let&#39;s describe the World in some 2D tables</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

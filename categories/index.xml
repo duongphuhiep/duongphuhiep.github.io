@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/categories/</link>
+    <description>Recent content in Categories on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 25 Apr 2020 14:21:32 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>backend</title>
+      <link>https://duongphuhiep.github.io/categories/backend/</link>
+      <pubDate>Sat, 25 Apr 2020 14:21:32 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/backend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://duongphuhiep.github.io/categories/security/</link>
+      <pubDate>Sat, 30 Nov 2019 14:54:22 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://duongphuhiep.github.io/categories/test/</link>
+      <pubDate>Thu, 01 Nov 2018 00:06:10 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://duongphuhiep.github.io/categories/database/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://duongphuhiep.github.io/categories/devops/</link>
+      <pubDate>Sun, 12 Mar 2017 16:30:48 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>frontend</title>
+      <link>https://duongphuhiep.github.io/categories/frontend/</link>
+      <pubDate>Tue, 05 Jan 2016 21:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>office</title>
+      <link>https://duongphuhiep.github.io/categories/office/</link>
+      <pubDate>Fri, 02 Oct 2015 23:50:49 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/office/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>memory</title>
+      <link>https://duongphuhiep.github.io/categories/memory/</link>
+      <pubDate>Mon, 16 Jun 2003 21:23:27 +0700</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/memory/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

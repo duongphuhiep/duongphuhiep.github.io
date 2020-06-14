@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>memory on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/categories/memory/</link>
+    <description>Recent content in memory on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 Jun 2003 21:23:27 +0700</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/categories/memory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Choose for the Future</title>
+      <link>https://duongphuhiep.github.io/posts/choose-for-the-future/</link>
+      <pubDate>Mon, 16 Jun 2003 21:23:27 +0700</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/choose-for-the-future/</guid>
+      <description>The me in 19 years old wrote this post! The boy was in the verge of choosing between .NET or Java.
+ Những khó khăn lớn trong lập trình thường là:
+ Thứ nhất là do ranh giới giữa lập trình ứng dụng và lập trình hệ thống rất mờ nhạt, người lập trình ứng dụng cũng có đầy đủ trong tay các công cụ để thọc sâu và có thể làm tổn thương hệ thống (như thao tác các vùng nhớ trên đĩa, chặn các ngắt hệ thống, thay đổi cấu trúc đĩa cứng &amp;hellip;).</description>
+    </item>
+    
+  </channel>
+</rss>

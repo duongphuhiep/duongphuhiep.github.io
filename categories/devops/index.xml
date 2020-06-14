@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/categories/devops/</link>
+    <description>Recent content in devops on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 12 Mar 2017 16:30:48 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Merge Conflicts</title>
+      <link>https://duongphuhiep.github.io/posts/git-merge-conflicts/</link>
+      <pubDate>Sun, 12 Mar 2017 16:30:48 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/git-merge-conflicts/</guid>
+      <description>I used Github for years. Most of my personals projects are on Github. However I&amp;rsquo;m only an amateur Git user who only knowledgeable enough to work with one-person projects. I suppose that many Github&amp;rsquo;s users (or evens a majority of them) are like me.
+Now, I need to use Git in a team. Things become complicated: branches to merge, conflicts pop up, cryptic error messages or strange situations&amp;hellip; I tried many GUI tools with hope that it will make Git more friendly.</description>
+    </item>
+    
+    <item>
+      <title>Git Revision Number</title>
+      <link>https://duongphuhiep.github.io/posts/git-revision-number/</link>
+      <pubDate>Sun, 12 Mar 2017 12:32:04 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/git-revision-number/</guid>
+      <description>As a former SVN user migrating to GIT, I miss the SVN revision number.
+I usually put the revision number in the package name, and I can tell which package is the newest one because I know that the revision 18742 is newer than the revision 18730.
+The SVN-revision number equivalent in GIT is the horrible SHA thingy, I cannot tell if the commit b3c76e is newer than df8ec9 (or am I?</description>
+    </item>
+    
+    <item>
+      <title>Most Used Linux Command</title>
+      <link>https://duongphuhiep.github.io/posts/most-used-linux-command/</link>
+      <pubDate>Tue, 01 Dec 2015 10:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/most-used-linux-command/</guid>
+      <description>Limit Bandwidth, simulate slow network $ sudo wondershaper {interface} {down} {up}  the {down} and {up} are bandwidth in kilobits. ,
+$ sudo wondershaper wlan0 1000 1000  To clear the limit,
+$ sudo wondershaper clear wlan0  http://jwalanta.blogspot.fr/2009/04/easy-bandwidth-shaping-in-linux.html
+list all interface:
+ifconfig netstat -i ip link show  Suspend pm-suspend pm-hibernate  System Info top df -h sudo lshw  List order by last modified last ls -altr  Vim | Goto End of File | G | | Goto Line | nG | | Show Line Number | :set nu |</description>
+    </item>
+    
+  </channel>
+</rss>

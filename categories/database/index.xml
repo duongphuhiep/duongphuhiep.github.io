@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/categories/database/</link>
+    <description>Recent content in database on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 31 Mar 2018 17:13:26 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yellow Style Modeling - Let&#39;s describe the World in some 2D tables</title>
+      <link>https://duongphuhiep.github.io/posts/yellow-style-modeling/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/yellow-style-modeling/</guid>
+      <description>Some friends asked me
+ How to optimize their Business process? How could we develop application on domains (finance, medical..) that we don&amp;rsquo;t have knowledge.. We&amp;rsquo;ve got an idea, a business project, how can we materialize it to an application?  These questions come down to &amp;ldquo;How should we develop / organize / optimize DATA in applications?&amp;rdquo;. Developing the DATA is a natural way to develop + materialize your idea (or project features).</description>
+    </item>
+    
+  </channel>
+</rss>

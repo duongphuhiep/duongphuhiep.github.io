@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/tags/</link>
+    <description>Recent content in Tags on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 25 Apr 2020 14:21:32 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C#</title>
+      <link>https://duongphuhiep.github.io/tags/c#/</link>
+      <pubDate>Sat, 25 Apr 2020 14:21:32 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>authentication</title>
+      <link>https://duongphuhiep.github.io/tags/authentication/</link>
+      <pubDate>Sat, 30 Nov 2019 14:54:22 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jwt</title>
+      <link>https://duongphuhiep.github.io/tags/jwt/</link>
+      <pubDate>Sat, 30 Nov 2019 14:54:22 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/jwt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oauth2</title>
+      <link>https://duongphuhiep.github.io/tags/oauth2/</link>
+      <pubDate>Sat, 30 Nov 2019 14:54:22 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/oauth2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openid</title>
+      <link>https://duongphuhiep.github.io/tags/openid/</link>
+      <pubDate>Sat, 30 Nov 2019 14:54:22 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/openid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://duongphuhiep.github.io/tags/java/</link>
+      <pubDate>Thu, 01 Nov 2018 00:06:10 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://duongphuhiep.github.io/tags/test/</link>
+      <pubDate>Thu, 01 Nov 2018 00:06:10 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xunit</title>
+      <link>https://duongphuhiep.github.io/tags/xunit/</link>
+      <pubDate>Thu, 01 Nov 2018 00:06:10 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/xunit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>modeling</title>
+      <link>https://duongphuhiep.github.io/tags/modeling/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/modeling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rdbms</title>
+      <link>https://duongphuhiep.github.io/tags/rdbms/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/rdbms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql</title>
+      <link>https://duongphuhiep.github.io/tags/sql/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uml</title>
+      <link>https://duongphuhiep.github.io/tags/uml/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/uml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://duongphuhiep.github.io/tags/git/</link>
+      <pubDate>Sun, 12 Mar 2017 16:30:48 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backbone</title>
+      <link>https://duongphuhiep.github.io/tags/backbone/</link>
+      <pubDate>Tue, 05 Jan 2016 21:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/backbone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactjs</title>
+      <link>https://duongphuhiep.github.io/tags/reactjs/</link>
+      <pubDate>Tue, 05 Jan 2016 21:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/reactjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://duongphuhiep.github.io/tags/linux/</link>
+      <pubDate>Tue, 01 Dec 2015 10:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nano</title>
+      <link>https://duongphuhiep.github.io/tags/nano/</link>
+      <pubDate>Tue, 01 Dec 2015 10:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/nano/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://duongphuhiep.github.io/tags/vim/</link>
+      <pubDate>Tue, 01 Dec 2015 10:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>excel</title>
+      <link>https://duongphuhiep.github.io/tags/excel/</link>
+      <pubDate>Fri, 02 Oct 2015 23:50:49 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/excel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macro</title>
+      <link>https://duongphuhiep.github.io/tags/macro/</link>
+      <pubDate>Fri, 02 Oct 2015 23:50:49 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/macro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vba</title>
+      <link>https://duongphuhiep.github.io/tags/vba/</link>
+      <pubDate>Fri, 02 Oct 2015 23:50:49 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/vba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visual basic</title>
+      <link>https://duongphuhiep.github.io/tags/visual-basic/</link>
+      <pubDate>Fri, 02 Oct 2015 23:50:49 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/visual-basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.net</title>
+      <link>https://duongphuhiep.github.io/tags/.net/</link>
+      <pubDate>Mon, 16 Jun 2003 21:23:27 +0700</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

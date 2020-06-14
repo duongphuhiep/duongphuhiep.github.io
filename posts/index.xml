@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/posts/</link>
+    <description>Recent content in Posts on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 25 Apr 2020 14:21:32 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C# (or Java) Programming Best Practices</title>
+      <link>https://duongphuhiep.github.io/posts/csharp-java-programming-some-best-practices/</link>
+      <pubDate>Sat, 25 Apr 2020 14:21:32 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/csharp-java-programming-some-best-practices/</guid>
+      <description>Base on my years experiences in codes review, I recognized some best practices which is really simple to apply to sanitize the codes, make them more testable or reusable. Experienced developers might apply some of them and don&amp;rsquo;t even realize it.
+In this article I will expose some of the common coding mistakes which I often see in codes review sessions along with some simple / best practice to avoid them.</description>
+    </item>
+    
+    <item>
+      <title>Authentication Demystify</title>
+      <link>https://duongphuhiep.github.io/posts/authentication-demystify/</link>
+      <pubDate>Sat, 30 Nov 2019 14:54:22 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/authentication-demystify/</guid>
+      <description>In the process of revamping an old (classic) PHP application to a modern Single Page Application, I need to re-write the Authentication module.
+This slide is my research on common questions / knowledege about Authentication:
+ How the Authentication happened in the old PHP application? How it handled expired users, and keep active users connect? What is the Oauth2, OpenId JWT What is 2-Factor authentication? How to implement it?  The most important part is my Refresh-token strategy.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://duongphuhiep.github.io/posts/unit-testing-en/</link>
+      <pubDate>Thu, 01 Nov 2018 00:06:10 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/unit-testing-en/</guid>
+      <description>A long time ago, a certain CTO asked me to write unit tests for a legacy application in order to increase the Sonar rating.. I did all I could, and hardly covered up to 40% of the codes. My &amp;ldquo;unit tests&amp;rdquo; that I wrote can run only if the database was well configured with some specific data.. Many &amp;ldquo;unit tests&amp;rdquo; depend on the server of other teams..
+At that moment I didn&amp;rsquo;t realize that the task was absurd.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://duongphuhiep.github.io/posts/unit-testing-vn/</link>
+      <pubDate>Wed, 11 Apr 2018 00:35:33 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/unit-testing-vn/</guid>
+      <description>Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng điểm Sonar. Sau nhiều cố gắng, các &amp;ldquo;Unit test&amp;rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &amp;ldquo;Unit test&amp;rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)</description>
+    </item>
+    
+    <item>
+      <title>Yellow Style Modeling - Let&#39;s describe the World in some 2D tables</title>
+      <link>https://duongphuhiep.github.io/posts/yellow-style-modeling/</link>
+      <pubDate>Sat, 31 Mar 2018 17:13:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/yellow-style-modeling/</guid>
+      <description>Some friends asked me
+ How to optimize their Business process? How could we develop application on domains (finance, medical..) that we don&amp;rsquo;t have knowledge.. We&amp;rsquo;ve got an idea, a business project, how can we materialize it to an application?  These questions come down to &amp;ldquo;How should we develop / organize / optimize DATA in applications?&amp;rdquo;. Developing the DATA is a natural way to develop + materialize your idea (or project features).</description>
+    </item>
+    
+    <item>
+      <title>Git Merge Conflicts</title>
+      <link>https://duongphuhiep.github.io/posts/git-merge-conflicts/</link>
+      <pubDate>Sun, 12 Mar 2017 16:30:48 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/git-merge-conflicts/</guid>
+      <description>I used Github for years. Most of my personals projects are on Github. However I&amp;rsquo;m only an amateur Git user who only knowledgeable enough to work with one-person projects. I suppose that many Github&amp;rsquo;s users (or evens a majority of them) are like me.
+Now, I need to use Git in a team. Things become complicated: branches to merge, conflicts pop up, cryptic error messages or strange situations&amp;hellip; I tried many GUI tools with hope that it will make Git more friendly.</description>
+    </item>
+    
+    <item>
+      <title>Git Revision Number</title>
+      <link>https://duongphuhiep.github.io/posts/git-revision-number/</link>
+      <pubDate>Sun, 12 Mar 2017 12:32:04 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/git-revision-number/</guid>
+      <description>As a former SVN user migrating to GIT, I miss the SVN revision number.
+I usually put the revision number in the package name, and I can tell which package is the newest one because I know that the revision 18742 is newer than the revision 18730.
+The SVN-revision number equivalent in GIT is the horrible SHA thingy, I cannot tell if the commit b3c76e is newer than df8ec9 (or am I?</description>
+    </item>
+    
+    <item>
+      <title>Backbone Model and Reactjs</title>
+      <link>https://duongphuhiep.github.io/posts/backbone-model-and-reactjs/</link>
+      <pubDate>Tue, 05 Jan 2016 21:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/backbone-model-and-reactjs/</guid>
+      <description>I want to write opinions after reading some articles about using Backbone Model in ReactJs applications.
+Why people still use the old &amp;ldquo;Backbone Model&amp;rdquo;?  In most scenario, the application was backbones-based (from start) and peoples want to migrate only the &amp;ldquo;View&amp;rdquo; layer to ReactJs. Some peoples choose Backbone Model because they are more familiar with.  Is this &amp;ldquo;duo&amp;rdquo; good or bad? I didn&amp;rsquo;t see any article telling the advantages of Backbone Model on a ReactJs applications in term of Perf / Testability / Maintainability&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Most Used Linux Command</title>
+      <link>https://duongphuhiep.github.io/posts/most-used-linux-command/</link>
+      <pubDate>Tue, 01 Dec 2015 10:41:58 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/most-used-linux-command/</guid>
+      <description>Limit Bandwidth, simulate slow network $ sudo wondershaper {interface} {down} {up}  the {down} and {up} are bandwidth in kilobits. ,
+$ sudo wondershaper wlan0 1000 1000  To clear the limit,
+$ sudo wondershaper clear wlan0  http://jwalanta.blogspot.fr/2009/04/easy-bandwidth-shaping-in-linux.html
+list all interface:
+ifconfig netstat -i ip link show  Suspend pm-suspend pm-hibernate  System Info top df -h sudo lshw  List order by last modified last ls -altr  Vim | Goto End of File | G | | Goto Line | nG | | Show Line Number | :set nu |</description>
+    </item>
+    
+    <item>
+      <title>Visual Basic, Macro Excel course</title>
+      <link>https://duongphuhiep.github.io/posts/visual-basic-lesson/</link>
+      <pubDate>Fri, 02 Oct 2015 23:50:49 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/visual-basic-lesson/</guid>
+      <description>Many vietnamese friends ask me to teach them Excel, macro VBA.. it is not really my speciality&amp;hellip; But ok, let&amp;rsquo;s just learn it together! Here my friends..
+ </description>
+    </item>
+    
+    <item>
+      <title>Choose for the Future</title>
+      <link>https://duongphuhiep.github.io/posts/choose-for-the-future/</link>
+      <pubDate>Mon, 16 Jun 2003 21:23:27 +0700</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/choose-for-the-future/</guid>
+      <description>The me in 19 years old wrote this post! The boy was in the verge of choosing between .NET or Java.
+ Những khó khăn lớn trong lập trình thường là:
+ Thứ nhất là do ranh giới giữa lập trình ứng dụng và lập trình hệ thống rất mờ nhạt, người lập trình ứng dụng cũng có đầy đủ trong tay các công cụ để thọc sâu và có thể làm tổn thương hệ thống (như thao tác các vùng nhớ trên đĩa, chặn các ngắt hệ thống, thay đổi cấu trúc đĩa cứng &amp;hellip;).</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/tags/c#/</link>
+    <description>Recent content in C# on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 25 Apr 2020 14:21:32 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C# (or Java) Programming Best Practices</title>
+      <link>https://duongphuhiep.github.io/posts/csharp-java-programming-some-best-practices/</link>
+      <pubDate>Sat, 25 Apr 2020 14:21:32 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/csharp-java-programming-some-best-practices/</guid>
+      <description>Base on my years experiences in codes review, I recognized some best practices which is really simple to apply to sanitize the codes, make them more testable or reusable. Experienced developers might apply some of them and don&amp;rsquo;t even realize it.
+In this article I will expose some of the common coding mistakes which I often see in codes review sessions along with some simple / best practice to avoid them.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://duongphuhiep.github.io/posts/unit-testing-en/</link>
+      <pubDate>Thu, 01 Nov 2018 00:06:10 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/unit-testing-en/</guid>
+      <description>A long time ago, a certain CTO asked me to write unit tests for a legacy application in order to increase the Sonar rating.. I did all I could, and hardly covered up to 40% of the codes. My &amp;ldquo;unit tests&amp;rdquo; that I wrote can run only if the database was well configured with some specific data.. Many &amp;ldquo;unit tests&amp;rdquo; depend on the server of other teams..
+At that moment I didn&amp;rsquo;t realize that the task was absurd.</description>
+    </item>
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://duongphuhiep.github.io/posts/unit-testing-vn/</link>
+      <pubDate>Wed, 11 Apr 2018 00:35:33 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/unit-testing-vn/</guid>
+      <description>Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng điểm Sonar. Sau nhiều cố gắng, các &amp;ldquo;Unit test&amp;rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &amp;ldquo;Unit test&amp;rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)</description>
+    </item>
+    
+  </channel>
+</rss>

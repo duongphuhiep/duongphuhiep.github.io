@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.72.0" />
+
+    
+    
+    
+
+<title>C# (or Java) Programming Best Practices • Hiep&#39;s Blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C# (or Java) Programming Best Practices"/>
+<meta name="twitter:description" content="Base on my years experiences in codes review, I recognized some best practices which is really simple to apply to sanitize the codes, make them more testable or reusable. Experienced developers might apply some of them and don&rsquo;t even realize it.
+In this article I will expose some of the common coding mistakes which I often see in codes review sessions along with some simple / best practice to avoid them."/>
+
+<meta property="og:title" content="C# (or Java) Programming Best Practices" />
+<meta property="og:description" content="Base on my years experiences in codes review, I recognized some best practices which is really simple to apply to sanitize the codes, make them more testable or reusable. Experienced developers might apply some of them and don&rsquo;t even realize it.
+In this article I will expose some of the common coding mistakes which I often see in codes review sessions along with some simple / best practice to avoid them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://duongphuhiep.github.io/posts/csharp-java-programming-some-best-practices/" />
+<meta property="article:published_time" content="2020-04-25T14:21:32+02:00" />
+<meta property="article:modified_time" content="2020-04-25T14:21:32+02:00" /><meta property="og:site_name" content="Hiep&#39;s Blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.49ebc79ae418095a3030a59e74edf330320c88572a455c40ca25b9d8bb20596c.css" integrity="sha256-SevHmuQYCVowMKWedO3zMDIMiFcqRVxAyiW52LsgWWw=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://duongphuhiep.github.io">Hiep&#39;s Blog</a>
+      </span>
+      
+      
+        <div class="author-image">
+          <img src="https://www.gravatar.com/avatar/933d1f65e9081fa65feccef9b6a723be?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
+        </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Hiep&#39;s Blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/duongphuhiep" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/duongphuhiep" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/duongphuhiep" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/phu-hiep-duong-487b7428" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/347051/hiep" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="mailto:duongphuhiep@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+    
+    
+</section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>C# (or Java) Programming Best Practices</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 25, 2020
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/backend">BACKEND</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/c">c#</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 7 min read
+</div>
+
+
+  </header>
+  
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  
+  <div class="post">
+    <p>Base on my years experiences in codes review, I recognized some best practices which is really simple to apply to sanitize the codes, make them more testable or reusable. Experienced developers might apply some of them and don&rsquo;t even realize it.</p>
+<p>In this article I will expose some of the common coding mistakes which I often see in codes review sessions along with some simple / best practice to avoid them. The sample codes is in C# flavor, but the ideas is applicable for other similar languages Java, Kotlin&hellip;</p>
+<h2 id="1-trycatch-the-rightway">1. try/catch the right way</h2>
+<h3 id="a-dont-trycatch-whenever-you-feel-like-it">a) Don&rsquo;t <code>try/catch</code> whenever you feel like it</h3>
+<blockquote>
+<p>Rule of thumb: <em>Avoid try/catch as much as possible</em></p>
+</blockquote>
+<p><code>try/catch</code> is BAD. It hurts the application performance. It should only be use on the out-most application entry and thread entry. In other parts of the code, all try/catch must to be justified.</p>
+<p>So avoid to write &ldquo;try&rdquo; and &ldquo;catch&rdquo; as much as you could. If you have no choice =&gt; put the comment to justify why would you have to <code>try/catch</code> here?</p>
+<p>If you use <code>try/catch</code> only to capture silly errors or to hide a problem =&gt; please think twice and justify why would you do that?</p>
+<p>For example a BAD Code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> v
+<span style="color:#66d9ef">try</span> {
+  v = <span style="color:#66d9ef">int</span>.Parse(something);
+}
+<span style="color:#66d9ef">catch</span> {
+   <span style="color:#75715e">//empty code: nothing to do with the exception just hide the Parse error
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>to make this codes better we can remove the <code>try/catch</code> and use <code>int.TryParse()</code> instead.</p>
+<h3 id="b-dont-hide-error">b) Don&rsquo;t hide error</h3>
+<p>Example: A BAD code: please never do it!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">try</span> {
+  MAIN_CODE
+}
+<span style="color:#66d9ef">catch</span> (Exception e)
+{
+  <span style="color:#75715e">// do nothing
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="c-dont-cut-off-the-stacktrace">c) Don&rsquo;t cut off the stacktrace</h3>
+<p>Example: A BAD code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">try</span> {
+  MAIN_CODE
+}
+<span style="color:#66d9ef">catch</span> (Exception e)
+{
+  DO_SOMETHING_WITH_EXCEPTION
+  <span style="color:#66d9ef">throw</span> e; <span style="color:#75715e">//BAD: you cut-off the stacktrace completely right here
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>A better one (but still second-rates for .Net framework, OK for .NetCore)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">try</span> {
+  MAIN_CODE which calls OTHER_FUNCTIONS
+}
+<span style="color:#66d9ef">catch</span> (Exception e)
+{
+  DO_SOMETHING_WITH_EXCEPTION
+  <span style="color:#66d9ef">throw</span>; <span style="color:#75715e">//still average (for .Net framework)! it keep the stacktrace of OTHER_FUNCTIONS but it hide the line in MAIN_CODE which trigger exception
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p><strong>Update:</strong> This solution is ok in .NetCore which is smart enough to pin-point the line in the MAIN_CODE in the stacktrace.
+But it is not the case for the old .Net framework. This moron puts the &ldquo;throw&rdquo; line (not the line of the MAIN_CODE line) to the stacktrace.</p>
+<h3 id="d-avoid-to-convert-an-exception-to-other-exception">d) Avoid to convert an Exception to other Exception</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">try</span> {
+  ..
+  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> SomeException()
+  ..
+}
+<span style="color:#66d9ef">catch</span> (SomeException e)
+{
+  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> OtherExeption();  <span style="color:#75715e">//BAD: you cut-off the stacktrace right here..
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Please keep the original exception if possible, only convert it to other exception if you really must to do so (please justify the reason).</p>
+<p>In fact, we should make this conversion only to &ldquo;hide&rdquo; the real error (<code>SomeException</code>) to the consumer. So we expose to the consumer <code>OtherException</code> with other details instead =&gt; please explain why did you want to hide the real error to the consumer and cut-off the stacktrace?</p>
+<p>If you don&rsquo;t want to hide the real error from the consumer but stil have other &ldquo;mysterious reason&rdquo; to convert from <code>SomeException</code> to <code>OtherException</code> and complexify the stacktrace and the debugging task, then here is the &ldquo;right&rdquo; way</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">try</span> {
+  ..
+  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> SomeException()
+  ..
+}
+<span style="color:#66d9ef">catch</span> (SomeException e)
+{
+  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> OtherExeption(<span style="color:#e6db74">&#34;more information&#34;</span>, e); <span style="color:#75715e">//better (but still average) please justify why couldn&#39;t you keep the original exception?
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h2 id="2-use-or-create-static-method-the-right-way">2. Use or create static method the right way</h2>
+<h3 id="a-static-is-only-good-for-helper--tools--utilities-which-dont-change-mutate-our-system">a) Static is only good for Helper / Tools / Utilities which don&rsquo;t change (mutate) our system</h3>
+<ul>
+<li>it should always give the same output for the same inputs</li>
+<li>it shouldn&rsquo;t call any thing which mutate the system</li>
+</ul>
+<p>Otherwise: avoid to create static methods..</p>
+<h3 id="b-think-about-singleton-pattern">b) Think about Singleton pattern</h3>
+<p>Make normal class which is unit-testable in any context, then use a singleton to make it available globally in your application.</p>
+<p>Don&rsquo;t forget that the static singleton might not be testable because it depends on the application context.. but the class itself is often testable,
+we only need to give it all the dependencies it wanted in the constructor (see the following)</p>
+<h2 id="3-constructors-must-to-express-dependencies">3. Constructors must to express dependencies</h2>
+<p>The parameters of the constructor should be the dependencies of the class. Example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FlowsConverter</span> {
+    <span style="color:#66d9ef">public</span> FlowsConverter(IUsdConverter usdConverter, IContractCustomerStore contractCustomerStore){
+        <span style="color:#75715e">//should initialize object, don&#39;t do any I/O or complicated computation here
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>In this example the class <code>FlowsConverter</code> depends on <code>UsdConverte</code> and <code>ContractCustomerStore</code> =&gt; The dependencies are expressed in the constructor.</p>
+<p>If a class has many (more than 3+) dependencies then it might be time to review the design; consider the <a href="https://blog.ploeh.dk/2010/02/02/RefactoringtoAggregateServices/">Facade Service</a> to group common logic together.</p>
+<p>In case the dependencies graph grow complicate, it is time to adopt a <a href="https://autofac.org/">Dependencies injection framework</a>.</p>
+<h2 id="4-single-responsibility-principle-srp">4. Single Responsibility Principle (SRP)</h2>
+<p><strong>a)</strong> Avoid unpredictable behavior in the constructor: eg: calculation (business logic), validation, I/O (access to DB, files..), let the constructor do its job: create object</p>
+<p><strong>b)</strong> Avoid unpredictable behavior in the getter, setter: example this code seem ok but it is actually not good:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MailInfo</span>
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> str_subject;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> subject
+    {
+        <span style="color:#66d9ef">get</span> { <span style="color:#66d9ef">return</span> str_subject; }
+        <span style="color:#66d9ef">set</span> {
+            <span style="color:#66d9ef">if</span> (str_subject <span style="color:#66d9ef">is</span> empty) <span style="color:#66d9ef">throw</span> Exception
+            str_subject = <span style="color:#66d9ef">value</span>
+        }
+    }
+    ...
+</code></pre></div><ul>
+<li>=&gt; it is not the responsiblity of <code>MailInfo</code> to validate his property or to decide if he&rsquo;ll allow the subject be empty</li>
+<li>=&gt; it is the responsibility of the Consumer class which might use an external <code>MailInfoValidator</code> for this purpose</li>
+</ul>
+<p><strong>c)</strong> Don&rsquo;t save the number of class or get lazy to create a new class file! Please</p>
+<ul>
+<li>break a long method to smaller ones</li>
+<li>break a big class to smaller ones which do only one things (and do it well)</li>
+<li>And each time you create a new class or method, think about how you will write test for it.
+<ul>
+<li><a href="https://medium.com/@duongphuhiep/unit-testing-94a3a560309e">Test codes is often harder to write than main codes.</a> But please, at least.. think about how you would write test to your new class / methods evens if you don&rsquo;t actually write the test.</li>
+<li>If you think about how to write the test for your class, you will naturally refactor your class to make it easier to test and make the better codes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-a-wrapper-for-a-idisposable-object-should-also-be-a-idisposable">5. A wrapper for a <code>IDisposable</code> object should also be a <code>IDisposable</code></h2>
+<p>If a object <code>A</code> is tighly-couple with a <code>IDisposable</code> object <code>B</code> and mean to be created and disposed together then think about making <code>A</code> a <code>IDisposable</code> as <code>B</code>.</p>
+<p>It means: if <code>A</code> depends on a <code>IDisposable</code> <code>B</code> then</p>
+<ul>
+<li>if <code>A</code> cannot function properly without <code>B</code> (after <code>B</code> is disposed) then <code>A</code> must also be a <code>IDisposable</code> and should be disposed along with <code>B</code> as well.</li>
+<li>if for some reason, you can&rsquo;t make <code>A</code> as disposable then please make sure that <code>A</code> will continue to work normally (or die gracefully) after <code>B</code> is disposed.</li>
+</ul>
+<p>Example BAD:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataContextDecorator</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> DataContext core; <span style="color:#75715e">//this is a IDisposable
+</span><span style="color:#75715e"></span> 
+    <span style="color:#66d9ef">public</span> DataContextDecorator(DataContext core)
+    {
+        <span style="color:#66d9ef">this</span>.core = core
+    }
+}
+</code></pre></div><p>A better version</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataContextDecorator</span> : IDisposable <span style="color:#75715e">//we will make this wrapper IDisposable too
+</span><span style="color:#75715e"></span>{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> DataContext core; <span style="color:#75715e">//this is a IDisposable
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">public</span> DataContextDecorator(DataContext core)
+    {
+        <span style="color:#66d9ef">this</span>.core = core
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Dispose()
+    {
+        dataContext.Dispose(); <span style="color:#75715e">//the core live and die with the wrapper
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><h2 id="6-focus-to-code-reusable-inside-application-not-outside-application">6. Focus to code reusable inside application, not outside application</h2>
+<p>If you are NOT making a framework or a library to publish elswhere then</p>
+<ul>
+<li>Don&rsquo;t try to make everything reusable outside of your application by abusing <code>Reflection</code> and <code>Generic</code> whenever you recognize a possible patterns.</li>
+<li>Please don&rsquo;t anticipate that your codes might be reused by other applications.. If it&rsquo;ll comes true (one day), we can always refactor it later.. =&gt; Focus to make your code easy to read (by others) and effective specifically for your current application first.</li>
+</ul>
+<h2 id="7-dont-blame-old-codes-try-to-enhance-them">7. Don&rsquo;t blame old codes, try to enhance them!</h2>
+<p>It is common to copy old codes to make new ones. The new codes become YOUR codes. It means:</p>
+<ul>
+<li>You have to master it: If there is part that you don&rsquo;t understand in your code then it is bad =&gt; so don&rsquo;t blindly copy the codes that you didn&rsquo;t understand.</li>
+<li>You have to take responsibility of your codes: If the new code (YOUR codes) is silly / strange or bug! please don&rsquo;t blame that it was because this part was copied from the old codes.</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/authentication-demystify/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Authentication Demystify</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
