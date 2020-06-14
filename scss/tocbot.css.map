@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "tocbot.css",
-	"sourceRoot": "c:/dev/blog/hugo",
+	"sourceRoot": "C:/dev/blog/hugo",
 	"sources": [
 		"assets/scss/tocbot.scss",
 		"assets/scss/hugo-toc.scss"
