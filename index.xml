@@ -11,11 +11,22 @@
     
     
     <item>
-      <title>How Did I Built My Blog</title>
-      <link>https://duongphuhiep.github.io/posts/how-did-i-built-this-blog/</link>
+      <title>About Me</title>
+      <link>https://duongphuhiep.github.io/about/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/about/</guid>
+      <description>As a passionate programer, my blog contents usually express my programing experiences, my personal opinions on how things work&amp;hellip;
+My native-language is vietnamese so you will find many english spelling issues everywhere. Although I will keep writing most of my content in this &amp;ldquo;bad&amp;rdquo; english because:
+ Hopefully, my writing will improve with time, otherwise it will never improve. Most of the reader are developers who usually understand english anyway.  Sometimes (if somebody ask me to) I can re-write a post in vietnamese / or mix langauge contents.</description>
+    </item>
+    
+    <item>
+      <title>How Did I Build My Blog</title>
+      <link>https://duongphuhiep.github.io/posts/how-did-i-build-this-blog/</link>
       <pubDate>Mon, 15 Jun 2020 20:52:26 +0200</pubDate>
       
-      <guid>https://duongphuhiep.github.io/posts/how-did-i-built-this-blog/</guid>
+      <guid>https://duongphuhiep.github.io/posts/how-did-i-build-this-blog/</guid>
       <description>None of the FREE blogging platforms fit my taste! As a fullstack developper it was a shame if I can&amp;rsquo;t built my own website..
 Requirements for my Blog  No-cost (otherwise it is a shame for me!) Easy-to-read interface.  peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog wihout much effort.   Manage content (CRUD) should not complicate. I usually write text and codes snippets then Markdown is a no-brainer.</description>
     </item>
@@ -39,15 +50,6 @@ In this article I will expose some of the common coding mistakes which I often s
       <description>In the process of revamping an old (classic) PHP application to a modern Single Page Application, I need to re-write the Authentication module.
 This slide is my research on common questions / knowledege about Authentication:
  How the Authentication happened in the old PHP application? How it handled expired users, and keep active users connect? What is the Oauth2, OpenId JWT What is 2-Factor authentication? How to implement it?  The most important part is my Refresh-token strategy.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://duongphuhiep.github.io/about/</link>
-      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://duongphuhiep.github.io/about/</guid>
-      <description>As a passionate programer, my blog contents usually express my programing experiences, my personal opinions on how things work&amp;hellip;</description>
     </item>
     
     <item>
