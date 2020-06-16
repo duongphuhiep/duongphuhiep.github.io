@@ -5,7 +5,7 @@
     <link>https://duongphuhiep.github.io/categories/</link>
     <description>Recent content in Categories on Hiep&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 25 Apr 2020 14:21:32 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 20:52:26 +0200</lastBuildDate>
     
 	<atom:link href="https://duongphuhiep.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,9 +13,18 @@
     <item>
       <title>backend</title>
       <link>https://duongphuhiep.github.io/categories/backend/</link>
-      <pubDate>Sat, 25 Apr 2020 14:21:32 +0200</pubDate>
+      <pubDate>Mon, 15 Jun 2020 20:52:26 +0200</pubDate>
       
       <guid>https://duongphuhiep.github.io/categories/backend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tool</title>
+      <link>https://duongphuhiep.github.io/categories/tool/</link>
+      <pubDate>Mon, 15 Jun 2020 20:52:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/categories/tool/</guid>
       <description></description>
     </item>
     

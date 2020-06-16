@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 15 Jun 2020 20:52:26 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How Did I Built My Blog</title>
+      <link>https://duongphuhiep.github.io/posts/how-did-i-built-this-blog/</link>
+      <pubDate>Mon, 15 Jun 2020 20:52:26 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/how-did-i-built-this-blog/</guid>
+      <description>None of the FREE blogging platforms fit my taste! As a fullstack developper it was a shame if I can&amp;rsquo;t built my own website..
+Requirements for my Blog  No-cost (otherwise it is a shame for me!) Easy-to-read interface.  peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog wihout much effort.   Manage content (CRUD) should not complicate. I usually write text and codes snippets then Markdown is a no-brainer.</description>
+    </item>
+    
+  </channel>
+</rss>

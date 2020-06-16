@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.72.0" />
+
+    
+    
+    
+
+<title>How Did I Built My Blog • Hiep&#39;s Blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How Did I Built My Blog"/>
+<meta name="twitter:description" content="None of the FREE blogging platforms fit my taste! As a fullstack developper it was a shame if I can&rsquo;t built my own website..
+Requirements for my Blog  No-cost (otherwise it is a shame for me!) Easy-to-read interface.  peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog wihout much effort.   Manage content (CRUD) should not complicate. I usually write text and codes snippets then Markdown is a no-brainer."/>
+
+<meta property="og:title" content="How Did I Built My Blog" />
+<meta property="og:description" content="None of the FREE blogging platforms fit my taste! As a fullstack developper it was a shame if I can&rsquo;t built my own website..
+Requirements for my Blog  No-cost (otherwise it is a shame for me!) Easy-to-read interface.  peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog wihout much effort.   Manage content (CRUD) should not complicate. I usually write text and codes snippets then Markdown is a no-brainer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://duongphuhiep.github.io/posts/how-did-i-built-this-blog/" />
+<meta property="article:published_time" content="2020-06-15T20:52:26+02:00" />
+<meta property="article:modified_time" content="2020-06-15T20:52:26+02:00" /><meta property="og:site_name" content="Hiep&#39;s Blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.bb75f1c00f34e1010438f3c57849b2e53423936019d283088dd7205a7d504ef2.css" integrity="sha256-u3XxwA804QEEOPPFeEmy5TQjk2AZ0oMIjdcgWn1QTvI=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://duongphuhiep.github.io">Hiep&#39;s Blog</a>
+      </span>
+      
+      
+        <div class="author-image">
+          <img src="https://www.gravatar.com/avatar/933d1f65e9081fa65feccef9b6a723be?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
+        </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Hiep&#39;s Blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/duongphuhiep" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/duongphuhiep" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/duongphuhiep" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/phu-hiep-duong-487b7428" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/347051/hiep" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="mailto:duongphuhiep@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+    
+    
+</section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>How Did I Built My Blog</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 15, 2020
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/backend">BACKEND</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/tool">TOOL</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/hugo">hugo</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ssg">ssg</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read - 672 words
+</div>
+
+
+  </header>
+  
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  
+  <div class="post">
+    <p>None of the FREE blogging platforms fit my taste! As a fullstack developper it was a shame if I can&rsquo;t built my own website..</p>
+<h2 id="requirements-for-my-blog">Requirements for my Blog</h2>
+<ul>
+<li>No-cost (otherwise it is a shame for me!)</li>
+<li>Easy-to-read interface.
+<ul>
+<li>peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog wihout much effort.</li>
+</ul>
+</li>
+<li>Manage content (CRUD) should not complicate.</li>
+<li>I usually write text and codes snippets then Markdown is a no-brainer.
+<ul>
+<li>Super complex and Rich contents usually go to my <strong>Goolge Slides</strong> =&gt; Ease to embeded the <strong>Goolge Slides</strong> in markdown contents is a requirement.</li>
+</ul>
+</li>
+<li>Comments capability: Reader would be able to comment to my blog posts</li>
+</ul>
+<h3 id="other-nice-to-have-functionalities">Other nice-to-have functionalities</h3>
+<ul>
+<li>Search</li>
+<li>&ldquo;like&rdquo; button (or &ldquo;clap&rdquo; button)</li>
+<li>a beautiful interface without the sacrifice of the &ldquo;Easy-to-read interface&rdquo; requirement
+<ul>
+<li>&ldquo;No&rdquo; for weak-constrat themes (for eg. &ldquo;gray text&rdquo; on a &ldquo;light gray background&rdquo;)</li>
+<li>&ldquo;No&rdquo; for text blend on a image background</li>
+<li>&ldquo;No&rdquo; for uses of multi-layer with transparent color</li>
+</ul>
+</li>
+<li>All the content should have backup (or revision history)</li>
+</ul>
+<h2 id="codepenio---an-effortless-solution">codepen.io - An effortless solution</h2>
+<p><a href="https://codepen.io/dashboard">codepen.io</a> offers a free blog solution sastifying most of my requirements. Although, there are some limitations:</p>
+<ul>
+<li>If you want to embed image in your post you must to upload it somewhere else.
+<ul>
+<li>Tips: I usually Copy/Paste my image to a github issues editor =&gt; github will then generate an URL to the images, then I can use the URL anywhere.</li>
+</ul>
+</li>
+<li>You cannot embed <strong>Youtube</strong> or <strong>Google Slides</strong></li>
+<li>You cannot get rid of the codepen menu and the small sponsor.. (though it is not really relevant or hinder the reader in anyway).</li>
+</ul>
+<p>Despite these minor limitations, I recommend <strong>codepen.io</strong> to all developers with similar requirements (If you don&rsquo;t want to get the hand dirty)</p>
+<h2 id="build-my-own-blog">Build my own blog</h2>
+<p>The best suitable tools for A markdown-centric CMS is a <a href="https://www.staticgen.com/">Static Sites Generator (SSG)</a> on a <a href="https://jamstack.org/">Jamstack</a>.</p>
+<p>The idea is that.</p>
+<ul>
+<li>you design the look (the theme) of your website with a <a href="https://www.google.com/search?q=html+template+language">HTML-template language</a> + CSS (or SCSS) + basic Javascript (jquery).</li>
+<li>you write contents (blog&rsquo;s posts) in markdown.</li>
+<li>then the SSG will combine these two to generate a static website (a bunch of static HTML/CSS/Javascript)</li>
+<li>then any jamstack web server can host this static website (no need PHP, no need nodejs, no need python.. on the hosting server)</li>
+</ul>
+<p>In my case:</p>
+<ul>
+<li>My <a href="https://github.com/duongphuhiep/blog1">blog codes sources</a> contains
+<ul>
+<li>The theme (or template)</li>
+<li>The content in markdown format</li>
+</ul>
+</li>
+<li>then <a href="https://gohugo.io/">Hugo</a> generates the <strong>Static website</strong>.</li>
+<li>finally <a href="https://travis-ci.org/">travis</a> deploy the <strong>Static website</strong> on <a href="https://github.com/duongphuhiep/duongphuhiep.github.io">my github page</a>.</li>
+</ul>
+<p>There is so many <a href="https://www.staticgen.com/">Static Sites Generator</a> today. I don&rsquo;t wanna get trouble for a small personal blog.. so I picked <a href="https://gohugo.io/">Hugo</a> - the (likely) most mature and popular <strong>Static Sites Generator</strong> with a huge community backup&hellip;</p>
+<p>If you are a Web (or full-stack) developer then the learning step shouldn&rsquo;t be too much of a problem.</p>
+<ul>
+<li>I recommend you to watch <a href="https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3">this series</a> first</li>
+</ul>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/qtIqKaDlqXo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<ul>
+<li>Then try to look for a <a href="https://themes.gohugo.io/">nice theme</a> as a base and tweak it to your taste.</li>
+<li>Dive in <a href="https://gohugo.io/documentation/">the documentation</a> only to search for thing you need to know in detail.</li>
+</ul>
+<h2 id="deployment">Deployment</h2>
+<p>Each time I push something to my <a href="https://github.com/duongphuhiep/blog1">Blog codes sources</a> (eg. make changes in contents or theme), then it will be automaticly re-built and re-deploy to <a href="https://github.com/duongphuhiep/duongphuhiep.github.io">my github page</a></p>
+<p>Here how I used <a href="https://travis-ci.org/">travis</a> to make this magic happened.</p>
+<ul>
+<li>Step 1: Create the repo on github the repo name must to be <code>YOUR_GITHUB_LOGIN.github.io</code></li>
+</ul>
+<p><img src="my_github_page.jpg" alt="my github page"></p>
+<ul>
+<li>Step 2: <a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">Create a <strong>Access Token</strong></a>. Give the access token the permissions to Read / Write your public repositories.</li>
+</ul>
+<p><img src="git_access_token.jpg" alt="create git access token"></p>
+<ul>
+<li>Step 3: Give the <strong>Access Token</strong> to <strong>travis</strong></li>
+</ul>
+<p><img src="01_travis.jpg" alt="give access token to travis"></p>
+<h2 id="comment-capability">Comment capability</h2>
+<p>Instead of paid solutions such as <em>muut</em>, <em>disqus</em>.., I used <strong>utteranc.es</strong>&hellip; You must to have a github account in order to comment on my blog. Most of my reader would be developers anyway. A developers without a github account shouldn&rsquo;t spam my blog so <strong>utteranc.es</strong> is the best fits in my case.</p>
+<h2 id="hidden-screens">Hidden screens</h2>
+<p>There is some hidden &ldquo;screen&rdquo; in my blog. They are called &ldquo;taxonomies&rdquo;</p>
+<ul>
+<li><a href="/tags">tags list</a></li>
+<li><a href="/categories">categories list</a></li>
+</ul>
+<p>I didn&rsquo;t expose them because they are not really useful.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/csharp-java-programming-some-best-practices/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">C# (or Java) Programming Best Practices</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <script src="https://utteranc.es/client.js"
+        repo="duongphuhiep/duongphuhiep.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
