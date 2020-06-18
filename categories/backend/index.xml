@@ -5,10 +5,21 @@
     <link>https://duongphuhiep.github.io/categories/backend/</link>
     <description>Recent content in backend on Hiep&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Jun 2020 20:52:26 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 21:27:09 +0200</lastBuildDate>
     
 	<atom:link href="https://duongphuhiep.github.io/categories/backend/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C# System.Text.Json</title>
+      <link>https://duongphuhiep.github.io/posts/csharp-system-text-json/</link>
+      <pubDate>Thu, 18 Jun 2020 21:27:09 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/csharp-system-text-json/</guid>
+      <description>There is many Json Serializer for .NET out there.
+Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. Howerver, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
+The Michael Blog&amp;rsquo;s post published some benchmark on differents .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer.</description>
+    </item>
     
     <item>
       <title>How Did I Build My Blog</title>

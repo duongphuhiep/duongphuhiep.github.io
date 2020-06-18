@@ -5,10 +5,28 @@
     <link>https://duongphuhiep.github.io/tags/</link>
     <description>Recent content in Tags on Hiep&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Jun 2020 20:52:26 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2020 21:27:09 +0200</lastBuildDate>
     
 	<atom:link href="https://duongphuhiep.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://duongphuhiep.github.io/tags/dotnet/</link>
+      <pubDate>Thu, 18 Jun 2020 21:27:09 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>json</title>
+      <link>https://duongphuhiep.github.io/tags/json/</link>
+      <pubDate>Thu, 18 Jun 2020 21:27:09 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/tags/json/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

@@ -3,23 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://duongphuhiep.github.io/about/</loc>
-    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
+    <loc>https://duongphuhiep.github.io/categories/backend/</loc>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://duongphuhiep.github.io/categories/backend/</loc>
-    <lastmod>2020-06-15T20:52:26+02:00</lastmod>
+    <loc>https://duongphuhiep.github.io/posts/csharp-system-text-json/</loc>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://duongphuhiep.github.io/categories/</loc>
-    <lastmod>2020-06-15T20:52:26+02:00</lastmod>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/dotnet/</loc>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://duongphuhiep.github.io/</loc>
-    <lastmod>2020-06-15T20:52:26+02:00</lastmod>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/json/</loc>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/</loc>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/</loc>
+    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/about/</loc>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -33,17 +58,7 @@
   </url>
   
   <url>
-    <loc>https://duongphuhiep.github.io/posts/</loc>
-    <lastmod>2020-06-15T20:52:26+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://duongphuhiep.github.io/tags/ssg/</loc>
-    <lastmod>2020-06-15T20:52:26+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://duongphuhiep.github.io/tags/</loc>
     <lastmod>2020-06-15T20:52:26+02:00</lastmod>
   </url>
   
