@@ -5,10 +5,19 @@
     <link>https://duongphuhiep.github.io/tags/java/</link>
     <description>Recent content in java on Hiep&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 01 Nov 2018 00:06:10 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:35:33 +0200</lastBuildDate>
     
 	<atom:link href="https://duongphuhiep.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unit Testing</title>
+      <link>https://duongphuhiep.github.io/posts/unit-testing-vn/</link>
+      <pubDate>Sun, 04 Nov 2018 00:35:33 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/unit-testing-vn/</guid>
+      <description>Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng điểm Sonar. Sau nhiều cố gắng, các &amp;ldquo;Unit test&amp;rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &amp;ldquo;Unit test&amp;rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)</description>
+    </item>
     
     <item>
       <title>Unit Testing</title>
@@ -18,15 +27,6 @@
       <guid>https://duongphuhiep.github.io/posts/unit-testing-en/</guid>
       <description>A long time ago, a certain CTO asked me to write unit tests for a legacy application in order to increase the Sonar rating.. I did all I could, and hardly covered up to 40% of the codes. My &amp;ldquo;unit tests&amp;rdquo; that I wrote can run only if the database was well configured with some specific data.. Many &amp;ldquo;unit tests&amp;rdquo; depend on the server of other teams..
 At that moment I didn&amp;rsquo;t realize that the task was absurd.</description>
-    </item>
-    
-    <item>
-      <title>Unit Testing</title>
-      <link>https://duongphuhiep.github.io/posts/unit-testing-vn/</link>
-      <pubDate>Wed, 11 Apr 2018 00:35:33 +0200</pubDate>
-      
-      <guid>https://duongphuhiep.github.io/posts/unit-testing-vn/</guid>
-      <description>Lúc mới vào nghề, có lần Sếp yêu cầu tôi viết Unit Test cho 1 ứng dụng cũ của công ty để tăng điểm Sonar. Sau nhiều cố gắng, các &amp;ldquo;Unit test&amp;rdquo; của tôi cũng chỉ phủ được khoảng 40% đám codes của ứng dụng cũ đó. Hơn nữa, muốn chạy được các &amp;ldquo;Unit test&amp;rdquo; đó, cần phải cấu hình CSDL, có dữ liệu mẫu và kết nối với các Ứng dụng ngoài (được phát triển bởi các nhóm khác)</description>
     </item>
     
     <item>

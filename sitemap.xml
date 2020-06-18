@@ -109,26 +109,31 @@
   
   <url>
     <loc>https://duongphuhiep.github.io/tags/java/</loc>
-    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+    <lastmod>2018-11-04T00:35:33+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://duongphuhiep.github.io/tags/test/</loc>
-    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+    <lastmod>2018-11-04T00:35:33+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://duongphuhiep.github.io/categories/test/</loc>
-    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+    <lastmod>2018-11-04T00:35:33+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://duongphuhiep.github.io/posts/unit-testing-en/</loc>
-    <lastmod>2018-11-01T00:06:10+02:00</lastmod>
+    <loc>https://duongphuhiep.github.io/posts/unit-testing-vn/</loc>
+    <lastmod>2018-11-04T00:35:33+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://duongphuhiep.github.io/tags/xunit/</loc>
+    <lastmod>2018-11-04T00:35:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/unit-testing-en/</loc>
     <lastmod>2018-11-01T00:06:10+02:00</lastmod>
   </url>
   
@@ -140,11 +145,6 @@
   <url>
     <loc>https://duongphuhiep.github.io/portfolio/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://duongphuhiep.github.io/posts/unit-testing-vn/</loc>
-    <lastmod>2018-04-11T00:35:33+02:00</lastmod>
   </url>
   
   <url>
