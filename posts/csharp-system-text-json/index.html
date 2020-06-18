@@ -207,7 +207,7 @@ The Michael Blog&rsquo;s post published some benchmark on differents .NET Json S
     
     
     <br/>
-    <i class="fas fa-clock"></i> 2 min read - 257 words
+    <i class="fas fa-clock"></i> 2 min read - 262 words
 </div>
 
 
@@ -226,7 +226,7 @@ However interesting comments show some missing factors in his benchmark.</p>
 <li>The <a href="https://dotnetcoretutorials.com/2020/01/25/what-those-benchmarks-of-system-text-json-dont-mention/">Wade Blog&rsquo;s post</a> show a Apple vs Orange in the benchmark of the <a href="https://michaelscodingspot.com/the-battle-of-c-to-json-serializers-in-net-core-3/">Michael Blog&rsquo;s post</a>: the case insensitive options are not the same default value.
 <ul>
 <li>The <a href="https://dotnetcoretutorials.com/2020/01/25/what-those-benchmarks-of-system-text-json-dont-mention/">Wade Blog&rsquo;s post</a> show also a massive improve in memory footprint of <code>System.Text.Json</code> compare to the <code>Newtonsoft.Json</code>.</li>
-<li>But in the speed benchmark, it left out the fact that the <code>System.Text.Json</code> is optimized for the Utf-8 encoding of HTTP message (not the Utf-16 encoding of the C# String) and conclude that the speed of <code>System.Text.Json</code> is only slightly faster than <code>Newtonsoft.Json</code>.</li>
+<li>But in the speed benchmark, it left out the fact that the <code>System.Text.Json</code> is optimized for the Utf-8 encoding of HTTP message (not the Utf-16 encoding of the C# String) and conclude that the speed of <code>System.Text.Json</code> is only slightly faster than <code>Newtonsoft.Json</code> which is optimal for Utf-16.</li>
 </ul>
 </li>
 </ul>
