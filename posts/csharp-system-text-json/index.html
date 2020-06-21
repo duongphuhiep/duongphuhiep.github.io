@@ -23,13 +23,13 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="C# System.Text.Json"/>
 <meta name="twitter:description" content="There is many Json Serializer for .NET out there.
-Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. Howerver, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
-The Michael Blog&rsquo;s post published some benchmark on differents .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer."/>
+Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. However, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
+The Michael Blog&rsquo;s post published some benchmark on differences .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer."/>
 
 <meta property="og:title" content="C# System.Text.Json" />
 <meta property="og:description" content="There is many Json Serializer for .NET out there.
-Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. Howerver, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
-The Michael Blog&rsquo;s post published some benchmark on differents .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer." />
+Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. However, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
+The Michael Blog&rsquo;s post published some benchmark on differences .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://duongphuhiep.github.io/posts/csharp-system-text-json/" />
 <meta property="article:published_time" content="2020-06-18T21:27:09+02:00" />
@@ -219,21 +219,21 @@ The Michael Blog&rsquo;s post published some benchmark on differents .NET Json S
   
   <div class="post">
     <p>There is many Json Serializer for .NET out there.</p>
-<p>Microsoft used to depend on the <code>Newtonsoft.Json</code> (aka. Json.NET) library. Howerver, since the .NET Core 3, Microsoft introduced their <a href="https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/">own json serializer</a> in the <code>System.Text.Json</code> package.</p>
-<p>The <a href="https://michaelscodingspot.com/the-battle-of-c-to-json-serializers-in-net-core-3/">Michael Blog&rsquo;s post</a> published some benchmark on differents .NET Json Serializers.
+<p>Microsoft used to depend on the <code>Newtonsoft.Json</code> (aka. Json.NET) library. However, since the .NET Core 3, Microsoft introduced their <a href="https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/">own json serializer</a> in the <code>System.Text.Json</code> package.</p>
+<p>The <a href="https://michaelscodingspot.com/the-battle-of-c-to-json-serializers-in-net-core-3/">Michael Blog&rsquo;s post</a> published some benchmark on differences .NET Json Serializers.
 His benchmark show that the new <code>System.Text.Json</code> of Microsoft is not the fastest one, but the speed favor appears to go to the <a href="https://github.com/kevin-montrose/Jil"><code>jil</code> serializer</a>.
 However interesting comments show some missing factors in his benchmark.</p>
 <ul>
 <li>Memory footprint usage is left out in the benchmark. So the benchmark is questionable in the multi-threading / big json scenario.</li>
 <li>The <a href="https://dotnetcoretutorials.com/2020/01/25/what-those-benchmarks-of-system-text-json-dont-mention/">Wade Blog&rsquo;s post</a> show a Apple vs Orange in the benchmark of the <a href="https://michaelscodingspot.com/the-battle-of-c-to-json-serializers-in-net-core-3/">Michael Blog&rsquo;s post</a>: the case insensitive options are not the same default value.
 <ul>
-<li>The <a href="https://dotnetcoretutorials.com/2020/01/25/what-those-benchmarks-of-system-text-json-dont-mention/">Wade Blog&rsquo;s post</a> show also a massive improve in memory footprint of <code>System.Text.Json</code> compare to the <code>Newtonsoft.Json</code>.</li>
+<li>The <a href="https://dotnetcoretutorials.com/2020/01/25/what-those-benchmarks-of-system-text-json-dont-mention/">Wade Blog&rsquo;s post</a> show also a massive improvement in memory footprint of <code>System.Text.Json</code> compare to the <code>Newtonsoft.Json</code>.</li>
 <li>But in the speed benchmark, it left out the fact that the <code>System.Text.Json</code> is optimized for the Utf-8 encoding of HTTP message (not the Utf-16 encoding of the C# String) and conclude that the speed of <code>System.Text.Json</code> is only slightly faster than <code>Newtonsoft.Json</code> which is optimal for Utf-16.</li>
 </ul>
 </li>
 </ul>
 <h2 id="my-take-away">My take away</h2>
-<p>I believe that Microsoft knows where they are going and capable to make the best .NET Json Serializer. They will improve futher the <code>System.Text.Json</code> package evens if it is (questionably) not the fastest one right now. In addition, the <code>System.Text.Json</code> package is open source and will probably attract talented contributors. It&rsquo;s time for me to <a href="https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to">migrate from the <code>Newtonsoft.Json</code> to this new <code>System.Text.Json</code></a>.</p>
+<p>I believe that Microsoft knows where they are going and capable to make the best .NET Json Serializer. They will improve further the <code>System.Text.Json</code> package evens if it is (questionably) not the fastest one right now. In addition, the <code>System.Text.Json</code> package is open source and will probably attract talented contributors. It&rsquo;s time for me to <a href="https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to">migrate from the <code>Newtonsoft.Json</code> to this new <code>System.Text.Json</code></a>.</p>
 
   </div>
   

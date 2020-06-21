@@ -16,7 +16,7 @@
       <pubDate>Sun, 21 Jun 2020 12:04:25 +0200</pubDate>
       
       <guid>https://duongphuhiep.github.io/posts/dependencies-injection/</guid>
-      <description>This is not an easy subject. I get confusion myself sometimes. So I always wanted to write about this subject since a long time ago. This big subject deserve a series of Posts, but I don&amp;rsquo;t wanna make it too long.
+      <description>This is not an easy subject. So I always wanted to write about it since a long time ago. This big subject deserves a series of Posts, but I don&amp;rsquo;t wanna make it too long.
 I will just express some random thoughts about DI in all kind of layers: principle&amp;rsquo;s, theories, code practices. so this posts might be a little messy and un-structured!
 Conforming Container (From the Mark Seemann&amp;rsquo;s blog post)</description>
     </item>
@@ -28,8 +28,8 @@ Conforming Container (From the Mark Seemann&amp;rsquo;s blog post)</description>
       
       <guid>https://duongphuhiep.github.io/posts/csharp-system-text-json/</guid>
       <description>There is many Json Serializer for .NET out there.
-Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. Howerver, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
-The Michael Blog&amp;rsquo;s post published some benchmark on differents .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer.</description>
+Microsoft used to depend on the Newtonsoft.Json (aka. Json.NET) library. However, since the .NET Core 3, Microsoft introduced their own json serializer in the System.Text.Json package.
+The Michael Blog&amp;rsquo;s post published some benchmark on differences .NET Json Serializers. His benchmark show that the new System.Text.Json of Microsoft is not the fastest one, but the speed favor appears to go to the jil serializer.</description>
     </item>
     
     <item>
@@ -38,8 +38,8 @@ The Michael Blog&amp;rsquo;s post published some benchmark on differents .NET Js
       <pubDate>Mon, 15 Jun 2020 20:52:26 +0200</pubDate>
       
       <guid>https://duongphuhiep.github.io/posts/how-did-i-build-this-blog/</guid>
-      <description>None of the FREE blogging platforms fit my taste! As a fullstack developper it was a shame if I can&amp;rsquo;t built my own website..
-Requirements for my Blog  No-cost (otherwise it is a shame for me!) Easy-to-read interface.  peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog wihout much effort.   Manage content (CRUD) should not complicate. I usually write text and codes snippets then Markdown is a no-brainer.</description>
+      <description>None of the FREE blogging platforms fit my taste! As a fullstack developer it was a shame if I can&amp;rsquo;t built my own website..
+Requirements for my Blog  No-cost (otherwise it is a shame for me!) Easy-to-read interface.  peoples with slight vision imperfections (eg. Color Vision Deficiency) should be able to read my blog without much effort.   Manage content (CRUD) should not complicate. I usually write text and codes snippets so Markdown format is a no-brainer.</description>
     </item>
     
     <item>

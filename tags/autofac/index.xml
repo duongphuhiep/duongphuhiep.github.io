@@ -16,7 +16,7 @@
       <pubDate>Sun, 21 Jun 2020 12:04:25 +0200</pubDate>
       
       <guid>https://duongphuhiep.github.io/posts/dependencies-injection/</guid>
-      <description>This is not an easy subject. I get confusion myself sometimes. So I always wanted to write about this subject since a long time ago. This big subject deserve a series of Posts, but I don&amp;rsquo;t wanna make it too long.
+      <description>This is not an easy subject. So I always wanted to write about it since a long time ago. This big subject deserves a series of Posts, but I don&amp;rsquo;t wanna make it too long.
 I will just express some random thoughts about DI in all kind of layers: principle&amp;rsquo;s, theories, code practices. so this posts might be a little messy and un-structured!
 Conforming Container (From the Mark Seemann&amp;rsquo;s blog post)</description>
     </item>
