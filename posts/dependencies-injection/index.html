@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.72.0" />
+
+    
+    
+    
+
+<title>Dependencies Injection • Hiep&#39;s Blog</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dependencies Injection"/>
+<meta name="twitter:description" content="This is not an easy subject. I get confusion myself sometimes. So I always wanted to write about this subject since a long time ago. This big subject deserve a series of Posts, but I don&rsquo;t wanna make it too long.
+I will just express some random thoughts about DI in all kind of layers: principle&rsquo;s, theories, code practices. so this posts might be a little messy and un-structured!
+Conforming Container (From the Mark Seemann&rsquo;s blog post)"/>
+
+<meta property="og:title" content="Dependencies Injection" />
+<meta property="og:description" content="This is not an easy subject. I get confusion myself sometimes. So I always wanted to write about this subject since a long time ago. This big subject deserve a series of Posts, but I don&rsquo;t wanna make it too long.
+I will just express some random thoughts about DI in all kind of layers: principle&rsquo;s, theories, code practices. so this posts might be a little messy and un-structured!
+Conforming Container (From the Mark Seemann&rsquo;s blog post)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://duongphuhiep.github.io/posts/dependencies-injection/" />
+<meta property="article:published_time" content="2020-06-21T12:04:25+02:00" />
+<meta property="article:modified_time" content="2020-06-21T12:04:25+02:00" /><meta property="og:site_name" content="Hiep&#39;s Blog" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.bb75f1c00f34e1010438f3c57849b2e53423936019d283088dd7205a7d504ef2.css" integrity="sha256-u3XxwA804QEEOPPFeEmy5TQjk2AZ0oMIjdcgWn1QTvI=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://duongphuhiep.github.io">Hiep&#39;s Blog</a>
+      </span>
+      
+      
+        <div class="author-image">
+          <img src="https://www.gravatar.com/avatar/933d1f65e9081fa65feccef9b6a723be?s=240&d=mp" class="img--circle img--headshot element--center" alt="gravatar">
+        </div>
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Hiep&#39;s Blog</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/duongphuhiep" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/duongphuhiep" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/duongphuhiep" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/phu-hiep-duong-487b7428" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://stackoverflow.com/users/347051/hiep" rel="me"><i class="fab fa-stack-overflow fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="mailto:duongphuhiep@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+    
+    
+</section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+
+
+<article>
+  <header>
+    <h1>Dependencies Injection</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 21, 2020
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/backend">BACKEND</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/di">di</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ioc">ioc</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/autofac">autofac</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/unittest">unittest</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read - 1063 words
+</div>
+
+
+  </header>
+  
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Table of Content</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  
+  <div class="post">
+    <p>This is not an easy subject. I get confusion myself sometimes. So I always wanted to write about this subject since a long time ago. This big subject deserve a series of Posts, but I don&rsquo;t wanna  make it too long.</p>
+<p>I will just express some random thoughts about DI in all kind of layers: principle&rsquo;s, theories, code practices. so this posts might be a little messy and un-structured!</p>
+<h2 id="conforming-container">Conforming Container</h2>
+<p>(From the <a href="https://blog.ploeh.dk/2014/05/19/conforming-container">Mark Seemann&rsquo;s blog post</a>)</p>
+<blockquote>
+<p>Once in a while, someone comes up with the idea that it would be great to introduce a common abstraction over various DI Containers in .NET &hellip;</p>
+</blockquote>
+<p>This Common abstraction of all the DI Containers is called &ldquo;Conforming Container&rdquo;.
+The conclusion is that <strong>Conforming Container is an anti-pattern</strong>. Please read the explanation in the <a href="https://blog.ploeh.dk/2014/05/19/conforming-container">original blog post</a>.</p>
+<p>He also explained why peoples still try to do it from time to time:</p>
+<ul>
+<li>&ldquo;Fear of vendor lock-in&rdquo; (Autofac, Unity, NInject&hellip;). They want to freely switch from NInject to Autofac for example&hellip;</li>
+<li>&ldquo;Library (or Framework) authors mistakenly thinking that Dependency Injection support involves defining a <em>Conforming Container</em>&rdquo;.</li>
+</ul>
+<p>IMO, Dependency Injection is only a technique to follow the <a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">Dependency inversion principle</a>.
+Your library don&rsquo;t &ldquo;USE&rdquo; DI, but they should follow the &ldquo;DI&rdquo; principles. As long as your your libs nuget follow the principles, then the consumer can choose any DI Container, or no Container at all to consume your library. You don&rsquo;t need any DI container or depend on any DI framework to follow the DI principles.</p>
+<h2 id="microsoft-nearly-did-a-conforming-container">Microsoft nearly did a <em>Conforming Container</em></h2>
+<p>Don&rsquo;t get it wrong! Microsoft didn&rsquo;t try to unify all the .NET DI container, or build adapters for them.</p>
+<p>They only made their own DI Container for ASP.NET in the package <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1">Microsoft.Extensions.DependencyInjection.Abstraction</a>.</p>
+<p>It&rsquo;s just that <a href="https://github.com/aspnet/DependencyInjection">other library authors happen to implement the Microsoft&rsquo;s DI Container interface</a>. So that make this interface got the same advantage of a <em>Conforming Container</em>. However</p>
+<p>The <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1">Microsoft.Extensions.DependencyInjection.Abstraction</a> is optimized for the Microsoft implementation and only in the context of the ASP.NET applications. It might not optimized for others DI frameworks and might not make sense in others context. So some DI frameworks might not compatible with this abstraction.</p>
+<h2 id="codes-samples">Codes Samples</h2>
+<p>I will demonstrate the <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1">Microsoft.Extensions.DependencyInjection.Abstraction</a> and by using 2 popular implementations of this interface:</p>
+<ul>
+<li>Microsoft implementation</li>
+<li>Autofac implementation</li>
+</ul>
+<p>Let&rsquo;s take a basic dependency graph sample: A <code>IWalletService</code> depends on a <code>IWalletRepository</code> which in turn depend on a database connectionString:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IWalletRepository
+{
+    <span style="color:#66d9ef">void</span> WriteToDB();
+}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> IWalletService
+{
+    <span style="color:#66d9ef">void</span> LockAmount();
+}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WalletRepository</span>: IWalletRepository
+{
+    <span style="color:#66d9ef">public</span> WalletRepository(<span style="color:#66d9ef">string</span> connectionString) {...}
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> WriteToDB() {...}
+}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WalletService</span>: IWalletService
+{
+    <span style="color:#66d9ef">public</span> WalletService(IWalletRepository walletRepository) {...}
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> LockAmount() {...}
+}
+</code></pre></div><h3 id="microsoft-implementation">Microsoft implementation</h3>
+<p>In this example, I use the Microsoft implementation in the package
+<code>Microsoft.Extensions.DependencyInjection</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> Microsoft.Extensions.DependencyInjection;
+
+<span style="color:#75715e">// Use the default DI Container of Microsoft
+</span><span style="color:#75715e"></span>IServiceProviderFactory&lt;IServiceCollection&gt; serviceProviderFactory = <span style="color:#66d9ef">new</span> DefaultServiceProviderFactory();
+
+<span style="color:#75715e">#region Register all implementations / objects in the dependency graph
+</span><span style="color:#75715e"></span>
+IServiceCollection serviceCollection = <span style="color:#66d9ef">new</span> ServiceCollection();
+
+<span style="color:#75715e">// AddScoped means that only one object will be created per scope. In this example I also injected implementation with parameter connectionString, you don&#39;t need thigs like &#34;IConnectionString&#34;
+</span><span style="color:#75715e"></span>serviceCollection.AddScoped(<span style="color:#66d9ef">typeof</span>(IWalletRepository), svp =&gt; <span style="color:#66d9ef">new</span> WalletRepository(<span style="color:#e6db74">&#34;LocalDB_connection_string&#34;</span>));
+
+<span style="color:#75715e">// AddTransient means that A new object is created for each GetService(). I use `AddTransient` only for demonstration purpose
+</span><span style="color:#75715e"></span>serviceCollection.AddTransient(<span style="color:#66d9ef">typeof</span>(IWalletService), <span style="color:#66d9ef">typeof</span>(WalletService));
+
+<span style="color:#75715e">#endregion
+</span><span style="color:#75715e"></span>
+IServiceProvider serviceProvider = serviceProviderFactory.CreateServiceProvider(serviceCollection);
+
+<span style="color:#75715e">//just for demonstration, you don&#39;t need to open a new scope here, you can just use serviceProvider.GetService&lt;IWalletService&gt;() to resolve your object.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> controller01Scope = serviceProvider.CreateScope())
+{
+    IServiceProvider scopedServiceProvider = controller01Scope.ServiceProvider;
+    
+    <span style="color:#75715e">//resolve the dependencies to create (or Get) the object
+</span><span style="color:#75715e"></span>    IWalletService walletService = scopedServiceProvider.GetService&lt;IWalletService&gt;();
+    
+    walletService.LockAmount();
+}
+</code></pre></div><h3 id="autofac-implementation">Autofac implementation</h3>
+<p>You can register objects:</p>
+<ul>
+<li>in the Microsoft-way (with <code>AddScoped</code>, <code>AddTransient</code>..) as the above example.</li>
+<li>or in the Autofac-way (with <code>Register</code>, <code>RegisterType</code>)..</li>
+</ul>
+<p>The initialization process is a little different but in the end you will have a <code>IServiceProvider</code> to resolve objects in your Dependency Graph as the above example.</p>
+<p>In addition, you also have access to the Autofac specifics features such as <code>serviceProvider.GetAutofacRoot().BeginLifetimeScope()</code>..</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> Autofac;
+<span style="color:#66d9ef">using</span> Autofac.Extensions.DependencyInjection;
+<span style="color:#66d9ef">using</span> Microsoft.Extensions.DependencyInjection;
+
+IServiceProviderFactory&lt;ContainerBuilder&gt; serviceProviderFactory = <span style="color:#66d9ef">new</span> AutofacServiceProviderFactory();
+
+<span style="color:#75715e">#region Register all implementations / objects in the dependency graph
+</span><span style="color:#75715e"></span>
+IServiceCollection serviceCollection = <span style="color:#66d9ef">new</span> ServiceCollection();
+serviceCollection.AddScoped(<span style="color:#66d9ef">typeof</span>(IWalletRepository), svp =&gt; <span style="color:#66d9ef">new</span> WalletRepository(<span style="color:#e6db74">&#34;LocalDB_connection_string&#34;</span>));
+serviceCollection.AddTransient(<span style="color:#66d9ef">typeof</span>(IWalletService), <span style="color:#66d9ef">typeof</span>(WalletService));
+
+ContainerBuilder containerBuilder = serviceProviderFactory.CreateBuilder(serviceCollection);
+<span style="color:#75715e">// You can also use the Autofac specifics methods to register dependencies. For eg:
+</span><span style="color:#75715e">// containerBuilder.RegisterType&lt;TransactionRepository&gt;().As&lt;ITransactionRepository&gt;();
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#endregion
+</span><span style="color:#75715e"></span>
+IServiceProvider serviceProvider = serviceProviderFactory.CreateServiceProvider(containerBuilder);
+
+<span style="color:#75715e">//from here it is exactly the same as the above example
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> controller01Scope = serviceProvider.CreateScope())
+{
+    IServiceProvider scopedServiceProvider = controller01Scope.ServiceProvider;
+    IWalletService walletService = scopedServiceProvider.GetService&lt;IWalletService&gt;();
+    walletService.LockAmount();
+}
+
+</code></pre></div><h2 id="do-you-need-to-use-a-di-container-or-a-di-framework">Do you need to use a DI Container (or a DI Framework)?</h2>
+<p>After all the &ldquo;cool&rdquo; demonstrations about How to do Dependency Injection.. I want to come back to the starting point :D</p>
+<p>Do we really need all of these thing? (<code>IServiceProviderFactory</code>, <code>IServiceCollection</code>, ..). Hell no! for most applications&hellip;</p>
+<p>In truth, most of the time that I use the Microsoft DI Framework simply because I was in the ASP.NET application. The ASP.NET framework is big enough to justify the utilization of a DI Framework. It also needs something to manage the <strong>objects lifetime</strong> (Controller scopes, Request scopes, Application/Singleton scopes), and it is also the role of a DI Container.</p>
+<p>Other than that, all of my applications is not big enough to justify the utilization of a DI Container. I usually use the <a href="(https://www.rhyous.com/2017/11/08/avoiding-dependency-injections-constructor-injection-hell-by-using-the-custom-or-default-pattern/)">Custom or Default Pattern</a> to avoid the <a href="https://www.rhyous.com/2016/09/27/constructor-injection-hell/">Constructor Injection Hell</a>. It is also called the <em>Poor Man&rsquo;s Injection</em> or ironically the <em>Bastard Injection</em> - an <strong>anti-pattern</strong>. And yeah.. though well aware about all this, I still use this pattern in every applications which</p>
+<ul>
+<li>The object graph is not complicate.</li>
+<li>Most of the dependencies are Singletons so the Objects Lifetime Management is not necessary.</li>
+</ul>
+<p>In this (common) situation, using a DI Framework give me more troubles than actual benefits. Moreover, I didn&rsquo;t turn every single thing to interface either, especially for idiots POCO objects. <strong>As long as I can write unit test for my codes (which means as long as I can mock every I/O Codes) then it is good enough.</strong> In order to mock the I/O Codes, I naturally turn most of the classes to Interface in the end. But I didn&rsquo;t blindly turn things into interface, if I did then it was for a good justifiable reason.</p>
+<p>One day (which probably never come) if the application grow big enough to ask for a DI Framework, then include a DI Framework and refactor these codes shouldn&rsquo;t be much of a problem.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/csharp-system-text-json/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">C# System.Text.Json</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <script src="https://utteranc.es/client.js"
+        repo="duongphuhiep/duongphuhiep.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-68626039-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

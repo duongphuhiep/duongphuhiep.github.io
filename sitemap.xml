@@ -3,17 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://duongphuhiep.github.io/categories/backend/</loc>
-    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+    <loc>https://duongphuhiep.github.io/tags/autofac/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://duongphuhiep.github.io/posts/csharp-system-text-json/</loc>
-    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
+    <loc>https://duongphuhiep.github.io/categories/backend/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://duongphuhiep.github.io/categories/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/dependencies-injection/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/di/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/ioc/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/tags/unittest/</loc>
+    <lastmod>2020-06-21T12:04:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://duongphuhiep.github.io/posts/csharp-system-text-json/</loc>
     <lastmod>2020-06-18T21:27:09+02:00</lastmod>
   </url>
   
@@ -23,22 +63,7 @@
   </url>
   
   <url>
-    <loc>https://duongphuhiep.github.io/</loc>
-    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://duongphuhiep.github.io/tags/json/</loc>
-    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://duongphuhiep.github.io/posts/</loc>
-    <lastmod>2020-06-18T21:27:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://duongphuhiep.github.io/tags/</loc>
     <lastmod>2020-06-18T21:27:09+02:00</lastmod>
   </url>
   
