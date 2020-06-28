@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mediatr on Hiep&#39;s Blog</title>
+    <link>https://duongphuhiep.github.io/tags/mediatr/</link>
+    <description>Recent content in mediatr on Hiep&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 21 Jun 2020 12:04:25 +0200</lastBuildDate>
+    
+	<atom:link href="https://duongphuhiep.github.io/tags/mediatr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dependencies Injection</title>
+      <link>https://duongphuhiep.github.io/posts/dependencies-injection/</link>
+      <pubDate>Sun, 21 Jun 2020 12:04:25 +0200</pubDate>
+      
+      <guid>https://duongphuhiep.github.io/posts/dependencies-injection/</guid>
+      <description>This is not an easy subject. So I always wanted to write about it since a long time ago. This big subject deserves a series of Posts, but I don&amp;rsquo;t wanna make it too long.
+I will just express some random thoughts about DI in all kind of layers: principle&amp;rsquo;s, theories, code practices. so this posts might be a little messy and un-structured!
+Conforming Container (From the Mark Seemann&amp;rsquo;s blog post)</description>
+    </item>
+    
+  </channel>
+</rss>

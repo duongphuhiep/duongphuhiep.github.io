@@ -210,12 +210,24 @@ Conforming Container (From the Mark Seemann&rsquo;s blog post)" />
            
       
           <a class="badge badge-tag" href="/tags/unittest">unittest</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/mediatr">mediatr</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/mediator">mediator</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/cqrs">cqrs</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/cqs">cqs</a>
           
       
     
     
     <br/>
-    <i class="fas fa-clock"></i> 8 min read - 1584 words
+    <i class="fas fa-clock"></i> 8 min read - 1597 words
 </div>
 
 
@@ -378,11 +390,11 @@ IServiceProvider serviceProvider = serviceProviderFactory.CreateServiceProvider(
 <p>While the facade pattern can help to reduce the <a href="https://www.rhyous.com/2016/09/27/constructor-injection-hell/">Constructor Injection Hell</a> by grouping some dependencies together; The <a href="https://en.wikipedia.org/wiki/Mediator_pattern">Mediator pattern</a> is the only tool which actually gives me the illusion of reducing the DI Graph complexities. This pattern tells that my component A doesn&rsquo;t need to depend directly on the component B and C but rather indirectly through a Mediator, so that A does not even know about the existence of B or C. Put it bluntly, A depends only on the Mediator instead of B and C.</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">CQS principle</a> classify the communication between components into 2 categories <strong>Command</strong> and <strong>Query</strong>. The trend is to <strong>apply the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">CQS principle</a> on the <a href="https://en.wikipedia.org/wiki/Mediator_pattern">Mediator pattern</a></strong>:</p>
 <ul>
-<li>Microsoft publish an excellent <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/apply-simplified-microservice-cqrs-ddd-patterns">article about CQRS and Mediator</a></li>
+<li>Microsoft publish an excellent <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api">article about CQRS and Mediator</a></li>
 <li>In <a href="https://www.youtube.com/watch?v=5OtUm1BLmG0">this talk about the &ldquo;Clean Architecture&rdquo;</a>, Json Taylor demonstrated this practice in the <strong>Application-level</strong> of his &ldquo;Clean Architecture&rdquo;.</li>
 <li>The <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">&ldquo;Clean Code&rdquo; book</a> and number of Post on dzone also talk about it.</li>
 </ul>
-<p>However, there&rsquo;s no one-fit-all solution of course, whatever beautiful or powerful a pattern is. The mediator pattern also <a href="https://alex-klaus.com/mediator/">introduce other complexities</a>. I also think that Coupling the Mediator with the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">CQS principle</a> like that will make the mediator acts much like the <a href="https://medium.com/@hugo.oliveira.rocha/what-they-dont-tell-you-about-event-sourcing-6afc23c69e9a">Event Sourcing</a> or a <a href="https://en.wikipedia.org/wiki/Service_locator_pattern">Service Locator</a> so inherits all <a href="https://alex-klaus.com/mediator/">the disadvantages of this anti-pattern</a>.</p>
+<p>However, there&rsquo;s no one-fit-all solution of course, whatever beautiful or powerful a pattern is. The mediator / CQRS pattern might <a href="https://softwareengineering.stackexchange.com/a/352872">fit in some use cases but not for others</a>. It also <a href="https://stackoverflow.com/a/62095189/347051">introduce other complexities</a>. I also think that Coupling the Mediator with the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">CQS principle</a> like that will make the mediator acts much like the <a href="https://medium.com/@hugo.oliveira.rocha/what-they-dont-tell-you-about-event-sourcing-6afc23c69e9a">Event Sourcing</a> or a <a href="https://en.wikipedia.org/wiki/Service_locator_pattern">Service Locator</a> so inherits all <a href="https://alex-klaus.com/mediator/">the disadvantages of this anti-pattern</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>My recommendation is that you should know about all of these patterns and library. They are powerful TOOLs you definitely have to learn, the benefits might big enough to over-shadow the drawbacks.</p>
 <p>Many developers usually got excited about all these sweet techniques and hastily practice them everywhere, justify by all the goodies of these techniques without asking if all the goodies are real for the situation at hand?</p>
