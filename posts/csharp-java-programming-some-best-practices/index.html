@@ -204,7 +204,7 @@ In this article I will expose some of the common coding mistakes which I often s
     
     
     <br/>
-    <i class="fas fa-clock"></i> 7 min read - 1384 words
+    <i class="fas fa-clock"></i> 7 min read - 1480 words
 </div>
 
 
@@ -346,44 +346,44 @@ we only need to give it all the dependencies it wanted in the constructor (see t
 </ul>
 </li>
 </ul>
-<h2 id="5-a-wrapper-for-a-idisposable-object-should-also-be-a-idisposable">5. A wrapper for a <code>IDisposable</code> object should also be a <code>IDisposable</code></h2>
-<p>If a object <code>A</code> is tighly-couple with a <code>IDisposable</code> object <code>B</code> and mean to be created and disposed together then think about making <code>A</code> a <code>IDisposable</code> as <code>B</code>.</p>
-<p>It means: if <code>A</code> depends on a <code>IDisposable</code> <code>B</code> then</p>
+<h2 id="5-a-class-which-create-a-new-idisposable-object-should-also-be-a-idisposable">5. A class which create a new <code>IDisposable</code> object should also be a <code>IDisposable</code></h2>
 <ul>
-<li>if <code>A</code> cannot function properly without <code>B</code> (after <code>B</code> is disposed) then <code>A</code> must also be a <code>IDisposable</code> and should be disposed along with <code>B</code> as well.</li>
-<li>if for some reason, you can&rsquo;t make <code>A</code> as disposable then please make sure that <code>A</code> will continue to work normally (or die gracefully) after <code>B</code> is disposed.</li>
+<li>It is highly recommended that when you create a <code>new IDisposable</code>, do it in a <code>using</code></li>
+<li>But for some reason, you cannot create <code>new IDisposable</code> in a &ldquo;using&rdquo;, and you have to keep your new <code>IDisposable</code> object alive for an unforseenable time then think about making the parent class <code>IDisposable</code>. In other word: You should make your class <code>IDisposable</code> and free all other <code>IDisposable</code> which is created during its life.</li>
 </ul>
 <p>Example BAD:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataContextDecorator</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>
 {
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> DataContext core; <span style="color:#75715e">//this is a IDisposable
-</span><span style="color:#75715e"></span> 
-    <span style="color:#66d9ef">public</span> DataContextDecorator(DataContext core)
+    <span style="color:#66d9ef">public</span> IDisposable b;
+ 
+    <span style="color:#66d9ef">public</span> M()
     {
-        <span style="color:#66d9ef">this</span>.core = core
-    }
-}
-</code></pre></div><p>A better version</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">sealed</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataContextDecorator</span> : IDisposable <span style="color:#75715e">//we will make this wrapper IDisposable too
-</span><span style="color:#75715e"></span>{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">readonly</span> DataContext core; <span style="color:#75715e">//this is a IDisposable
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">public</span> DataContextDecorator(DataContext core)
-    {
-        <span style="color:#66d9ef">this</span>.core = core
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Dispose()
-    {
-        dataContext.Dispose(); <span style="color:#75715e">//the core live and die with the wrapper
+        <span style="color:#66d9ef">this</span>.b = <span style="color:#66d9ef">new</span> SomeDisposable(); <span style="color:#75715e">//A created something Disposable and keep it alive (not use &#34;using&#34;)
 </span><span style="color:#75715e"></span>    }
 }
+</code></pre></div><p>A better version: make A also disposable and explicitly clean all the left-over IDisposable which it created during its life time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>: IDisposable
+{
+    <span style="color:#66d9ef">public</span> IDisposable b;
+ 
+    <span style="color:#66d9ef">public</span> M()
+    {
+        <span style="color:#66d9ef">this</span>.b = <span style="color:#66d9ef">new</span> SomeDisposable(); <span style="color:#75715e">//A created something Disposable and keep it alive (not use &#34;using&#34;)
+</span><span style="color:#75715e"></span>    }
+    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Dispose() 
+    {
+        <span style="color:#66d9ef">if</span> (b != <span style="color:#66d9ef">null</span>) b.Dispose();
+    }
+}
 </code></pre></div><h2 id="6-focus-to-code-reusable-inside-application-not-outside-application">6. Focus to code reusable inside application, not outside application</h2>
-<p>If you are NOT making a framework or a library to publish elswhere then</p>
+<p>If you are NOT making a framework or a library to publish else-where then</p>
 <ul>
 <li>Don&rsquo;t try to make everything reusable outside of your application by abusing <code>Reflection</code> and <code>Generic</code> whenever you recognize a possible patterns.</li>
 <li>Please don&rsquo;t anticipate that your codes might be reused by other applications.. If it&rsquo;ll comes true (one day), we can always refactor it later.. =&gt; Focus to make your code easy to read (by others) and effective specifically for your current application first.</li>
 </ul>
+<p>Unless you really want to make a framework or a generic library, then engage to publish and maintain it in a proper repository with support, documentation etc.. There is no point to make everything as Generic as possible. We usually have Generic for common things already, find something popular / standard / well maintain then just use it.</p>
+<p>If you have to code something reusable then make it generic &ldquo;enough&rdquo; for your 2, 3 uses cases at hand, but do not make it super generic / abstract thinking that other peoples will use it for 1 milions others uses cases.</p>
 <h2 id="7-dont-blame-old-codes-try-to-enhance-them">7. Don&rsquo;t blame old codes, try to enhance them!</h2>
 <p>It is common to copy old codes to make new ones. The new codes become YOUR codes. It means:</p>
 <ul>
